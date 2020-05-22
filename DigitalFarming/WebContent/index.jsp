@@ -12,6 +12,7 @@
 		<%@ include file="/partials/header.jsp" %>		
 		<br>
 		
+		
 		<div class="portfolio_area">
         <!-- <div class="container-fluid p-0"> -->
             <div class="portfolio_wrap">
