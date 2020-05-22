@@ -8,6 +8,7 @@ public class Carrello {
 		this.setIdUtente(id_utente);
 	}
 	
+	
 	public ArrayList<Prodotto> getProdotti(){
 		return this.prodotti;
 	}
