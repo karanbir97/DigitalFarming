@@ -9,10 +9,10 @@ public class ConnessioneDB {
 	public ConnessioneDB(){
 		this.conn = null;
 		this.server = "localhost";
-		this.porta  = 3306;
+		this.porta  = 3310;
 		this.nomeDB = "buccella_macellaro_maiorano";
 		this.userDB = "root";
-		this.passDB = "adminadmin";	
+		this.passDB = "root";	
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
