@@ -8,28 +8,15 @@
 	<body>
 		<%@ include file="/partials/header.jsp" %>				
 		<div id="content">
-			<p>La MACELLERIA EAT MEAT 2.0, è una macelleria storica di Eboli (Salerno).
-				Nel corso degli anni, grazie alla qualità dei prodotti venduti e dei servizi resi con cortesia e professionalità, l'attività s'è ingrandita e così è andato ad aumentare non solo le nostre stalle ma anche il personale</p>
+			
 			<div id="prodotti">
-				<h1>Qualità dei nostri Prodotti</h1>
-				<img src="<%=request.getContextPath()%>/images/p2_chisiamo.jpg">
-				<p>L’alta qualità è per noi un impegno quotidiano, una responsabilità che ci assumiamo nei confronti dei nostri clienti.
-					Seguiamo metodi di lavorazione tradizionali ed antiche ricette che, insieme alla ricerca e all’utilizzo di moderne tecniche di produzione, ci permettono di ottenere salumi sempre più gustosi, sicuri e genuini.
-					Controlliamo personalmente ogni fase del processo produttivo. Solo alla fine, ci mettiamo la firma.
-					Per questo abbiamo ottenuto numerosi premi e riconoscimenti.
-					Per questo produciamo, ogni giorno, salumi semplicemente buonissimi.</p>
-			</div>
-			
+				<h1>Chi siamo</h1>
+				<img src="images/azienda-agricola.jpg" alt="">
+				<p>“Digital Farming” è un'azienda agricola, nasce con l’obiettivo di valorizzare digitalmente le produzioni degli associati.
+Digital Farming si trova nel cuore della Piana del Sele, florida realtà agricola famosa per le terre fertili e le favorevoli condizioni climatiche, le produzioni della “Chiana”, infatti, sono da sempre conosciute per le loro caratteristiche di altissimo valore nutrizionale e per la genuinità ed autenticità dei sapori.
 
-			
-			<div id="stagionatura">
-				<h1>Stagionatura</h1>
-				<img src="<%=request.getContextPath()%>/images/p_chisiamo.jpg">
-				<p>Lunghe e lente stagionature permettono ai nostri salumi un processo di affinamento naturale, senza l’ausilio di tecniche ed enzimi che ne accelerino la trasformazione. Utilizziamo inoltre solo gli agenti antibatterici indispensabili per una sicura conservazione.
-					Ci sottoponiamo a rigorosi controlli qualitativi e sanitari di HACCP in collaborazione con i veterinari delle ASL locali e gli istituti di analisi e ricerca accreditati.
-					Abbiamo ottenuto recentemente anche le certificazioni internazionali IFS e BRC, standard di sicurezza globale e qualità dei processi.</p>
+Le insalate adulte e da sfalcio (particolarmente quelle indirizzate alle industrie di quarta gamma), i finocchi, i cavolfiori, i carciofi, le angurie, i meloni, le melanzane, i peperoni, i pomodori, i pomodori destinati alla trasformazione industriale e le zucchine sono fra le colture più importanti delle aziende agricole che costituiscono la base sociale dell'azienda.</p>
 			</div>
-			
 	
 		
 			
@@ -37,3 +24,13 @@
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+

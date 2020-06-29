@@ -25,7 +25,7 @@
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		background-color: #276274;
+		background-color: green;
 		height: 140px;
 		position: relative;
 		top: 0;
@@ -36,12 +36,12 @@
 		width: 100%;
 		float: none;
 		margin: 0 auto;
-		text-align: center;		
+		text-align: center;	
 	}
 	
 	.logo{
 		display: inline-block;
-		width: 60%;
+		width: 80%;
 		height: 100%;
 	}
 	.logo img{
@@ -85,7 +85,7 @@
 	
 	.nav-ospite .parte-mobile{
 		display: block;
-		background-color: #276274;
+		background-color: green;
 		margin: 0;
 		padding: 1em;		
 		list-style-type: none;	

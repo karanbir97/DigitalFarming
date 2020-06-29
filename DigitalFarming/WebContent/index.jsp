@@ -58,5 +58,5 @@
 		<script src="js/home/main.js"></script>
 		
 		<%@ include file="/partials/footer.jsp" %>	
-	</body>
+	</body> 
 </html>

@@ -50,7 +50,6 @@
  						</ul>
 					</li>
 					<li><a href="<%=request.getContextPath()%>/chi_siamo.jsp">Chi siamo</a></li>
-					<li><a href="<%=request.getContextPath()%>/contattaci.jsp">Contattaci</a></li>
 				</ul>
 				
 				<ul class="parte-mobile">
