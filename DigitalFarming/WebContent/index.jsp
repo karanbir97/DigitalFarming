@@ -55,7 +55,7 @@
 		<script src="js/home/jquery-3.2.1.min.js"></script>
 		<script src="js/home/jquery.nicescroll.min.js"></script>
 		<script src="js/home/pana-accordion.js"></script>
-		<script src="js/home/main.js"></script>
+		<script src="js/home/main.js"></script>  
 		
 		<%@ include file="/partials/footer.jsp" %>	
 	</body> 
