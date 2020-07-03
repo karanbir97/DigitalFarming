@@ -4,7 +4,7 @@
 					<li><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
 				</ul>			
 				<ul class="parte">
-					<li><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>
+					<li><a href="<%=request.getContextPath()%>/home.jsp">Home</a></li>
 					<li class="has-child">
 						<a href="<%=request.getContextPath()%>/categoria.jsp?idcat=0">Prodotti</a>
 						<ul class="parte-figlio">
@@ -49,7 +49,6 @@
  						</ul>
 					</li>
 					<li><a href="<%=request.getContextPath()%>/chi_siamo.jsp">Chi siamo</a></li>
-					<li><a href="<%=request.getContextPath()%>/contattaci.jsp">Contattaci</a></li>
 					
 					<li><a href="<%=request.getContextPath()%>/_userArea/carrello.jsp">Carrello <span class="numeroProdottiCarrello"></span></a></li>
 					<li class="has-child">

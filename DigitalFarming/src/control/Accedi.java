@@ -74,12 +74,9 @@ public class Accedi extends HttpServlet {
 						session.setAttribute("nome_utente", nomeUtente);						
 						session.setAttribute("carrello", new Carrello(Integer.parseInt(result.getString("id_utente"))));
 						
-						if((int) session.getAttribute("tipo_utente") == 1) {
-							redirect = request.getContextPath()+"/_adminArea/profilo_admin.jsp";
-						}
-						if((int) session.getAttribute("tipo_utente") == 2) {
-							redirect = request.getContextPath()+"/_userArea/profilo_user.jsp"; 														
-						}	
+						
+							redirect = request.getContextPath()+"/home.jsp"; 														
+							
 						
 						contenuto = "Utente Trovato";						
 						risultato = 1;

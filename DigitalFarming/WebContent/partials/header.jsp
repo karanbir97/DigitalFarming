@@ -45,6 +45,12 @@
 					   	else if((Integer) request.getSession().getAttribute("tipo_utente") == 2){					   	
 					   		%><%@ include file="/partials/nav-utente.jsp" %><%
 					   	}
+					   	else if((Integer) request.getSession().getAttribute("tipo_utente") == 3){					   	
+					   		%><%@ include file="/partials/nav-utente.jsp" %><%
+					   	}
+					   	else if((Integer) request.getSession().getAttribute("tipo_utente") == 4){					   	
+					   		%><%@ include file="/partials/nav-utente.jsp" %><%
+					   	}
 					%>								
 			</div>
 		</div>

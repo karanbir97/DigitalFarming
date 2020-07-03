@@ -21,7 +21,7 @@
                     </div>
                     <div class="gallery_hover">
                         <div class="hover_inner">
-                                <span>Responsabilee</span>
+                                <span>Responsabile</span>
                                 <a href="work_details.html"> <h3>Bestiame</h3></a>
                                 
                         </div>
@@ -34,7 +34,7 @@
                     <div class="gallery_hover">
                             <div class="hover_inner">
                                     <span>Responsabile</span>
-                                    <a href="work_details.html"> <h3>Macchinari</h3></a>
+                                  	<a href="javascript:;" onclick="window.open('pagina.htm', 'titolo', 'width=400, height=200, resizable, status, scrollbars=1, location');">  <h3>Macchinari</h3></a>
                             </div>
                         </div>
                 </div>

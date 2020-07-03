@@ -3,7 +3,8 @@
 <html lang = "it">
 	<head>
 		<%@ include file="/partials/head.jsp" %>	
-		<script src="<%=request.getContextPath()%>/js/scripts_accedi.js"></script>		
+		<script src="<%=request.getContextPath()%>/js/scripts_accedi.js"></script>	
+			
 		<title>Accedi</title>		
 	</head>
 	<body>
