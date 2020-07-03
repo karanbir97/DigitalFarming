@@ -9,6 +9,7 @@ public class Carrello {
 	}
 	
 	
+	
 	public ArrayList<Prodotto> getProdotti(){
 		return this.prodotti;
 	}
