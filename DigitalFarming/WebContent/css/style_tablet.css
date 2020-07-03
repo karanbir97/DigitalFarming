@@ -26,7 +26,7 @@
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		background-color: #276274;
+		background-color: #ffffff;
 		height: 140px;
 		position: relative;
 		top: 0;
@@ -80,7 +80,7 @@
 		float: right;
 		display: inline-block;	
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -96,7 +96,7 @@
 		float: left;
 		display: inline-block;
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -105,18 +105,18 @@
 	}
 	.nav-ospite .parte li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 	}
 	.nav-ospite .parte-top li a{
 		text-decoration: none;
-		color: white;		
+		color: green;		
 	}
 	
 	.nav-ospite .parte li .parte-figlio{
 		display: none;	
 	    width: 150px;
 	    min-height: 150px;
-		background-color: #276274;
+		background-color: green;
 		border: solid 3px #FFF;
 	    border-radius: 15px;
 	    margin-top: 20px;
@@ -165,7 +165,7 @@
 		float: right;
 		display: inline-block;	
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 30px;
@@ -185,7 +185,7 @@
 		float: left;
 		display: inline-block;
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 30px;
@@ -194,19 +194,19 @@
 	}
 	.nav-admin .parte li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 		font-size: 11px;
 	}
 	.nav-admin .parte-top li a{
 		text-decoration: none;
-		color: white;		
+		color: green;		
 	}
 	
 	.nav-admin .parte li .parte-figlio{
 		display: none;	
 	    width: 150px;
 	    min-height: 150px;
-		background-color: #276274;
+		background-color: green;
 		border: solid 3px #FFF;
 	    border-radius: 15px;
 	    margin-top: 20px;
@@ -253,7 +253,7 @@
 		width: 14%;
 		float: right;
 		display: inline-block;			
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 20px;
@@ -270,7 +270,7 @@
 		float: left;
 		display: inline-block;
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 20px;
@@ -280,7 +280,7 @@
 	}
 	.nav-utente .parte li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 	}
 
 	.nav-utente .parte li a .numeroProdottiCarrello{
@@ -291,14 +291,14 @@
 	
 	.nav-utente .parte-top li a{
 		text-decoration: none;
-		color: white;		
+		color: green;		
 	}
 	
 	.nav-utente .parte li .parte-figlio{
 		display: none;	
 	    width: 150px;
 	    min-height: 150px;
-		background-color: #276274;
+		background-color: green;
 		border: solid 3px #FFF;
 	    border-radius: 15px;
 	    margin-top: 20px;
@@ -491,7 +491,7 @@
 		padding: 0;
 		width: 100%;
 		height:15%;
-		background-color: #276274;
+		background-color: green;
 		overflow: hidden;
 		bottom: 0;
 		
@@ -602,7 +602,7 @@
 	/***********************PAGINA ACCEDI************************/
 	/************************************************************/	
 	#content #content-content #formAccedi{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 		
@@ -618,9 +618,9 @@
 	#content #content-content #formAccedi .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}
@@ -676,7 +676,7 @@
 	#content #prodotti h1{
 	font-family: verdana, sans-serif;
 	font-size: 38px;
-	color:#276274;
+	color: green;
 	
 	}
 	#content #prodotti > img{
@@ -784,14 +784,14 @@
 	#content #content-content .adminTitoloPagina{
 		font-size: 30px;
 		font-weight: bold;
-		color: #276274;
+		color: green;
 	}	
 	
 	#content #content-content .dataTables_wrapper{
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 5px;
 		padding: 10px;
-		color: #276274;
+		color: black;
 		overflow-x: auto;
 	}
 	
@@ -1082,7 +1082,7 @@
 	/****************PAGINA IMPOSTAZIONI ADMIN  *****************/
 	/************************************************************/	
 	#content #content-content #formImpostazioniAdmin{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 		
@@ -1113,15 +1113,15 @@
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}		
 	#content #content-content .userButtonRegistraAdmin, #content #content-content .userButtonDisattivaAdmin{	
-		background-color: #276274;
-		border: solid 1px #276274;
+		background-color: green;
+		border: solid 1px green;
 		height: 40px;		
 		color: #FFF;
 		text-transform: uppercase;				
@@ -1135,7 +1135,7 @@
 	/****************PAGINA IMPOSTAZIONI USER   *****************/
 	/************************************************************/	
 	#content #content-content #formImpostazioniUser{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 		
@@ -1156,14 +1156,14 @@
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}
 	#content #content-content .formIndirizzo{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;			
 		width: 44%;		
@@ -1205,7 +1205,7 @@
 	
 	#content #content-content .formIndirizzo .aggiungiIndirizzo{		
 		display: table-cell;
-		color: #00cc00;
+		color: green;
 		cursor: pointer;
 		width: 100%;	
 		height: 100%;		
@@ -1491,8 +1491,8 @@
 	/******************* PAGINA REGISTRATI  *********************/
 	/************************************************************/	
 	#content #content-content .userButtonRegistrati{	
-		background-color: #276274;
-		border: solid 1px #276274;
+		background-color: green;
+		border: solid 1px green;
 		height: 40px;		
 		color: #FFF;
 		text-transform: uppercase;				

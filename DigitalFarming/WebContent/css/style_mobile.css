@@ -25,7 +25,7 @@
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		background-color: green;
+		background-color: white;
 		height: 140px;
 		position: relative;
 		top: 0;
@@ -57,7 +57,7 @@
 	}
 	
 	.icon-nav i{
-		color: #FFF;
+		color: green;
 		cursor: pointer;		
 	}	
 	
@@ -134,7 +134,7 @@
 	
 	.nav-admin .parte-mobile{
 		display: block;
-		background-color: #276274;
+		background-color: green;
 		margin: 0;
 		padding: 1em;		
 		list-style-type: none;	
@@ -183,7 +183,7 @@
 	
 	.nav-utente .parte-mobile{
 		display: block;
-		background-color: #276274;
+		background-color: green;
 		margin: 0;
 		padding: 1em;		
 		list-style-type: none;	
@@ -368,7 +368,7 @@
 		padding: 0;
 		width: 100%;
 		height:15%;
-		background-color: #276274;
+		background-color: green;
 		overflow: hidden;
 		bottom: 0;		
 	}
@@ -473,7 +473,7 @@
 	/***********************PAGINA ACCEDI************************/
 	/************************************************************/	
 	#content #content-content #formAccedi{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 	}	
@@ -485,39 +485,11 @@
 	#content #content-content #formAccedi .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
-	}
-	
-	
-
-	/************************************************************/
-	/***********************PAGINA CONTATTACI********************/
-	/************************************************************/	
-	#content #content-content #formContattaci{
-		border: solid 2px #276274;		
-		border-radius: 15px;	
-		padding: 10px;	
-	}	
-	
-	#content #content-content #formContattaci .campoForm{
-		width: 100%;
-	}		
-
-	#content #content-content #formContattaci .submitForm{		
-		margin-top: 15px;
-		height: 40px;		
-		background-color: #ffcc00;		
-		border: 0;		
-		color: #276274;
-		font-weight: bold;
-		cursor: pointer;			
-	}
-	#content #content-content #formContattaci  #messaggio.campoForm{
-		resize: none;
 	}
 	
 	
@@ -543,7 +515,7 @@
 	#content #prodotti h1{
 	font-family: verdana, sans-serif;
 	font-size: 30px;
-	color:#276274;
+	color: green;
 	text-align: center;
 	
 	}
@@ -967,7 +939,7 @@
 	/****************PAGINA IMPOSTAZIONI ADMIN  *****************/
 	/************************************************************/	
 	#content #content-content #formImpostazioniAdmin{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 	}	
@@ -994,15 +966,15 @@
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}		
 	#content #content-content .userButtonRegistraAdmin, #content #content-content .userButtonDisattivaAdmin{	
-		background-color: #276274;
-		border: solid 1px #276274;
+		background-color: green;
+		border: solid 1px green;
 		height: 40px;		
 		color: #FFF;
 		text-transform: uppercase;				
@@ -1016,7 +988,7 @@
 	/****************PAGINA IMPOSTAZIONI USER   *****************/
 	/************************************************************/	
 	#content #content-content #formImpostazioniUser{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 	}	
@@ -1033,14 +1005,14 @@
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}	
 	#content #content-content .formIndirizzo{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 		margin-top: 20px;
@@ -1074,7 +1046,7 @@
 	
 	#content #content-content .formIndirizzo .aggiungiIndirizzo{		
 		display: table-cell;
-		color: #00cc00;
+		color: green;
 		cursor: pointer;
 		width: 100%;	
 		height: 100%;		
@@ -1324,8 +1296,8 @@
 	/******************* PAGINA REGISTRATI  *********************/
 	/************************************************************/	
 	#content #content-content .userButtonRegistrati{	
-		background-color: #276274;
-		border: solid 1px #276274;
+		background-color: green;
+		border: solid 1px green;
 		height: 40px;		
 		color: #FFF;
 		text-transform: uppercase;				
@@ -1334,7 +1306,7 @@
 		margin-top: 10px;
 	}		
 	#content #content-content #formRegistrati{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 	}	
@@ -1346,9 +1318,9 @@
 	#content #content-content #formRegistrati .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}	
