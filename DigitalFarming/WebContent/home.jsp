@@ -22,7 +22,12 @@
                     <div class="gallery_hover">
                         <div class="hover_inner">
                                 <span>Responsabile</span>
-                                <a href="work_details.html"> <h3>Bestiame</h3></a>
+                                <% if((Integer) request.getSession().getAttribute("tipo_utente") == 2){
+            							 %>
+                                  	<a href="work_details.html"> <h3>Bestiame</h3></a><%} 
+										else { 
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Bestiame</h3></a>
+                           				<%}%>
                                 
                         </div>
                     </div>
@@ -34,7 +39,12 @@
                     <div class="gallery_hover">
                             <div class="hover_inner">
                                     <span>Responsabile</span>
-                                  	<a href="javascript:;" onclick="window.open('pagina.htm', 'titolo', 'width=400, height=200, resizable, status, scrollbars=1, location');">  <h3>Macchinari</h3></a>
+                                    <% if((Integer) request.getSession().getAttribute("tipo_utente") == 3){
+            							 %>
+                                  	<a href="work_details.html"> <h3>Macchinari</h3></a><%} 
+										else { 
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Macchinari</h3></a>
+                           				<%}%>	
                             </div>
                         </div>
                 </div>
@@ -45,7 +55,12 @@
                     <div class="gallery_hover">
                     	<div class="hover_inner">
                     		<span>Responsabile</span>
-                            <a href="work_details.html"> <h3>Raccolta</h3></a>
+                    		<% if((Integer) request.getSession().getAttribute("tipo_utente") == 4){
+            							 %>
+                                  	<a href="work_details.html"> <h3>Raccolta</h3></a><%} 
+										else { 
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Raccolta</h3></a>
+                           				<%}%>
                         </div>
                     </div>
                 </div>
