@@ -21,7 +21,7 @@
                     </div>
                     <div class="gallery_hover">
                         <div class="hover_inner">
-                                <span>Responsabile</span>
+                                <span>Responsabileee</span>
                                 <a href="work_details.html"> <h3>Bestiame</h3></a>
                                 
                         </div>
