@@ -6,7 +6,7 @@
 				<ul class="parte">
 					<li><a href="<%=request.getContextPath()%>/home.jsp">Home</a></li>
 					<li class="has-child">
-						<a href="<%=request.getContextPath()%>/categoria.jsp?idcat=0">Prodotti</a>
+						<a href="<%=request.getContextPath()%>/categoria.jsp?idcat=0">Servizi</a>
 						<ul class="parte-figlio">
 							<%
 				        	String output = "";
@@ -50,34 +50,17 @@
 					</li>
 					<li><a href="<%=request.getContextPath()%>/chi_siamo.jsp">Chi siamo</a></li>
 					
-					<li><a href="<%=request.getContextPath()%>/_userArea/carrello.jsp">Carrello <span class="numeroProdottiCarrello"></span></a></li>
-					<li class="has-child">
-						<a href="#">Il mio account</a>
-						<ul class="parte-figlio">
-							<li><a href="<%=request.getContextPath()%>/_userArea/ordini.jsp">I Miei Ordini</a></li>
-							<li><a href="<%=request.getContextPath()%>/_userArea/profilo_user.jsp">Il mio profilo</a></li>
- 						</ul>
-					</li>
 				</ul>
 				
 				<ul class="parte-mobile">
 				<li><a href="<%=request.getContextPath()%>/index.jsp">Home</a></li>				
 					<li class="has-child">
-						<a href="<%=request.getContextPath()%>/categoria.jsp?idcat=0">Prodotti</a>
+						<a href="<%=request.getContextPath()%>/categoria.jsp?idcat=0">Servizi</a>
 						<ul class="parte-mobile-figlio">
 							<%= output %>
  						</ul>
 					</li>
 					<li><a href="<%=request.getContextPath()%>/chi_siamo.jsp">Chi siamo</a></li>
-					<li><a href="<%=request.getContextPath()%>/contattaci.jsp">Contattaci</a></li>
-					<li><a href="<%=request.getContextPath()%>/_userArea/carrello.jsp">Carrello <span class="numeroProdottiCarrello"></span></a></li>
-					<li class="has-child">
-						<a href="#">Il mio account</a>
-						<ul class="parte-mobile-figlio">
-							<li><a href="<%=request.getContextPath()%>/_userArea/ordini.jsp">I Miei Ordini</a></li>
-							<li><a href="<%=request.getContextPath()%>/_userArea/profilo_user.jsp">Il Mio Profilo</a></li>
- 						</ul>
-					</li>
 					<li><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
 				</ul>										
 </div>

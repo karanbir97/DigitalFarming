@@ -34,7 +34,7 @@ body{
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		background-color: #FFFFFF;
+		background-color: #ffffff;
 		height: 160px;
 		position: relative;
 		top: 0;
@@ -179,7 +179,7 @@ body{
 		float: right;
 		display: inline-block;	
 
-		border: 1px solid #ffcc00;
+		border: 1px solid #green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -197,7 +197,7 @@ body{
 		display: inline-block;
 		margin-left: 10px;
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -205,20 +205,20 @@ body{
 	}
 	.nav-admin .parte li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 		font-size: 94%;
 	}
 	.nav-admin .parte-top li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 	}
 	
 	.nav-admin .parte li .parte-figlio{
 		display: none;	
 	    width:250px;
 	    height:250px;
-		background-color: #276274;
-		border: solid 3px #FFF;
+		background-color: green;
+		border: solid 3px green;
 	    border-radius: 15px;
 	    margin-top: 20px;
 	    padding: 10px;
@@ -270,7 +270,7 @@ body{
 		float: right;
 		display: inline-block;	
 
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -288,7 +288,7 @@ body{
 		display: inline-block;
 		margin-left: 14px;
 		
-		border: solid 1px #ffcc00;
+		border: solid 1px green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -296,18 +296,18 @@ body{
 	}
 	.nav-utente .parte li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 	}
 	
 	.nav-utente .parte li a .numeroProdottiCarrello{
 		display: inline;
-		color: #ffcc00;
+		color: #green;
 		font-weight: normal;
 	}	
 	
 	.nav-utente .parte-top li a{
 		text-decoration: none;
-		color: white;
+		color: green;
 	}
 	
 	.nav-utente .parte li .parte-figlio{
@@ -427,7 +427,7 @@ body{
 		visibility: hidden;
 		height: 40px;
 		text-align: center;
-		background-color: #ffcc00;
+		background-color: #green;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;	
 	}
@@ -466,7 +466,7 @@ body{
 		text-align: center;
 	}
 	#content .right .bottom-content h2{	
-		color: #ffcc00;
+		color: #green;
 		display: inline-block;
 	}
 	#content .right .bottom-content h2:first-child{
@@ -535,7 +535,7 @@ body{
 	#content #content-content #formAccedi .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -562,7 +562,7 @@ body{
 	#content #content-content #formContattaci .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -735,13 +735,13 @@ body{
 	}
 	
 	#content #content-content .adminTitoloPagina span a{	
-		color: #ffcc00;
+		color: #green;
 		margin-top: 8px;
 		text-decoration: none;	
 	}	
 
 	#content #content-content .dataTables_wrapper{
-		border: solid 1px #ffcc00;
+		border: solid 1px #green;
 		border-radius: 5px;
 		padding: 10px;
 		color: #276274;
@@ -816,7 +816,7 @@ body{
 	}
 	
 	#content #content-content .adminFormAggiungi{
-		border: solid 1px #ffcc00;
+		border: solid 1px #green;
 		border-radius: 5px;
 		margin-top: 10px;
 		padding: 10px;
@@ -961,7 +961,7 @@ body{
 		text-align: center;
 		padding-top: 15%;
 		border-radius: 20px;
-		border: solid 4px #ffcc00;		
+		border: solid 4px #green;		
 	}
 	
 	#modalContatti #modalContattiNav{
@@ -1047,7 +1047,7 @@ body{
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -1090,7 +1090,7 @@ body{
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -1118,7 +1118,7 @@ body{
 		width: 100%;
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -1158,7 +1158,7 @@ body{
 	}		
 	
 	#content #content-content .userFormAggiungi{
-		border: solid 1px #ffcc00;
+		border: solid 1px #green;
 		border-radius: 5px;
 		margin-top: 10px;
 		padding: 10px;
@@ -1266,7 +1266,7 @@ body{
 		visibility: hidden;
 		height: 40px;
 		text-align: center;
-		background-color: #ffcc00;
+		background-color: #green;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;	
 	}
@@ -1392,7 +1392,7 @@ body{
 		text-align: center;
 		padding-top: 15%;
 		border-radius: 20px;
-		border: solid 4px #ffcc00;		
+		border: solid 4px #green;		
 	}
 	
 	#modalImmagini #modalImmaginiNav{
@@ -1443,7 +1443,7 @@ body{
 	#content #content-content #formRegistrati .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #ffcc00;		
+		background-color: #green;		
 		border: 0;		
 		color: #276274;
 		font-weight: bold;
@@ -1550,7 +1550,7 @@ body{
 		text-align: center;
 		padding-top: 15%;
 		border-radius: 20px;
-		border: solid 4px #ffcc00;		
+		border: solid 4px #green;		
 	}	
 	#modalDettaglioOrdine #modalDettaglioOrdineNav{
 		position: absolute;
