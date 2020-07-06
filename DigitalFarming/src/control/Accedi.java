@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import org.json.simple.JSONObject;
 
-import model.Carrello;
 import model.ConnessioneDB;
 /**
  * Servlet implementation class Accedi
@@ -72,7 +71,6 @@ public class Accedi extends HttpServlet {
 						session.setAttribute("cognome", result.getString("cognome"));
 						session.setAttribute("tipo_utente", Integer.parseInt(result.getString("id_tipo")));
 						session.setAttribute("nome_utente", nomeUtente);						
-						session.setAttribute("carrello", new Carrello(Integer.parseInt(result.getString("id_utente"))));
 						
 						
 							redirect = request.getContextPath()+"/home.jsp"; 														

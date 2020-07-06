@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
-import model.MD5;
 
 /**
  * Servlet implementation class SalvaProfiloUser
@@ -82,7 +81,7 @@ public class SalvaProfiloUser extends HttpServlet {
 					stmt.setString(2, cognomeUtente);
 					stmt.setString(3, sessoUtente);
 					stmt.setString(4, dataNascitaUtente);
-					stmt.setString(5, MD5.crypt(passwordUtente));
+					stmt.setString(5, passwordUtente);
 					stmt.setInt(6, idUtente);	
 				}						
 			
