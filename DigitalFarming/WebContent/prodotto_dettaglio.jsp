@@ -25,6 +25,10 @@
 			        	String prezzoProdotto = "";
 			        	String categoriaProdotto = "";			        	
 			        	Integer quantitaProdotto = 0;
+			        	String sesso="";
+			        	String data="";
+			        	Integer produzione=0;
+			        	String controllo="";
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
 							try {
@@ -37,6 +41,10 @@
 										+ "       p.descrizione_abbreviata, " 
 										+ "       p.descrizione, " 
 										+ "       p.quantita_disponibile, " 
+										+ "       p.sesso, " 
+										+ "       p.data, " 
+										+ "       p.produzione, " 
+										+ "       p.controllo, " 
 										+ "       (SELECT valore FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, " 
 										+ "       (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita, "
 										+ "       (SELECT nome FROM prodotti_categorie WHERE id_categoria = p.id_categoria) AS categoria, "
@@ -56,7 +64,7 @@
 											else{
 												filename = new SystemInformation().getPathImmaginiProdottoDefault();												
 											}																						
-											immaginePrincipale = "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";		
+											immaginePrincipale = "<img class='showImmagineProdotto' src='"+"images/prodotti/"+result.getInt("id_prodotto")+"/"+result.getString("filename")+"'  alt='"+filename+"/"+result.getString("filename")+"' alt='"+filename+"' />";		
 											
 											nomeProdotto = result.getString("nome");													
 											if(result.getString("prezzo_scontato") != null){																							
@@ -70,6 +78,8 @@
 											categoriaProdotto = "Categoria: <a href='"+request.getContextPath()+"/categoria.jsp?idcat="+result.getInt("id_categoria")+"'>"+result.getString("categoria")+"</a>";											
 											
 											quantitaProdotto = result.getInt("quantita_disponibile");
+											sesso=result.getString("sesso");
+											data=result.getString("data");
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
@@ -111,6 +121,9 @@
 					<div class="right">
 						<p class="nomeProdotto"><%=nomeProdotto %></p>
 						<p class="categoriaProdotto"><%=categoriaProdotto %></p>
+						<p class="prezzoProdotto">Razza : <%=descrizione %></p>
+						<p class="prezzoProdotto">Sesso : <%=sesso %></p>
+						<p class="prezzoProdotto">Data : <%=data %></p>
 						<p class="prezzoProdotto"><%=prezzoProdotto %> - 
 						<%
 							if(quantitaProdotto > 0){
@@ -133,7 +146,7 @@
 							}
 						%>						
 						<p class="descrizioneAbbreviataProdotto"><%=descrizioneAbbreviata %></p>
-						<p class="descrizioneProdotto"><%=descrizione %></p>
+						
 						
 						
 					</div>

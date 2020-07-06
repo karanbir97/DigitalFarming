@@ -35,7 +35,8 @@
 								sql = ""
 										+ "SELECT p.id_prodotto," 
 										+ "       p.nome, "
-										+ "       p.prezzo_base, " 
+										+ "       p.prezzo_base, "
+										+ "       p.descrizione, "
 										+ "       (SELECT valore FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, " 
 										+ "       (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita, "
 										+ "       (SELECT filename FROM prodotti_immagini WHERE id_prodotto = p.id_prodotto AND is_default = 1 AND attivo = 1) AS filename, "
@@ -61,21 +62,14 @@
 											
 											output += "<div class='product'>";
 												output += "<div class='product-image' data-idprodotto='"+result.getInt("id_prodotto")+"'>";
-														output += "<img src='"+filename+"'  alt='"+filename+"/"+result.getString("filename")+"' />";
+														output += "<img src='"+"images/prodotti/"+result.getInt("id_prodotto")+"/"+result.getString("filename")+"'  alt='"+filename+"/"+result.getString("filename")+"' />";
 												output += "</div>";
 												output += "<div class='product-title' data-idprodotto='"+result.getInt("id_prodotto")+"'>";
 													output += result.getString("nome");
 												output += "</div>";
 												output += "<div class='product-price'>";
-													Float prz;
-													if(result.getString("prezzo_scontato") != null){
-														prz = result.getFloat("prezzo_scontato") * (1+(result.getFloat("aliquota")/100));
-														output += "<span style='color: #DC483E;'>&euro; "+ new SystemInformation().truncateDecimal(prz, 2)+"*/"+result.getString("unita")+"</span>";
-													}
-													else{
-														prz = result.getFloat("prezzo_base") * (1+(result.getFloat("aliquota")/100));
-														output += "&euro; "+ new SystemInformation().truncateDecimal(prz, 2)+"/"+result.getString("unita");
-													}																									
+													output += result.getString("descrizione");
+																																					
 												output += "</div>";
 												output += "<div class='product-button' data-idprodotto='"+result.getInt("id_prodotto")+"'>";
 													output += "<a href='#'>Aggiungi al Carrello</a>";
