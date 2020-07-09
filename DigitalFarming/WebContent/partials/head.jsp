@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.Carrello" %>	
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>	
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -23,9 +23,5 @@
 	</script>
 	<script src="<%=request.getContextPath()%>/js/scripts.js"></script>
 	
-	<%		
-		if(request.getSession().getAttribute("carrello") == null) { //Se non trova il carrello per qualsiasi motivo, ricreo il carrello
-			request.getSession().setAttribute("carrello", new Carrello((Integer) request.getSession().getAttribute("id_utente")));
-		}			
-	%>	
+	
 	

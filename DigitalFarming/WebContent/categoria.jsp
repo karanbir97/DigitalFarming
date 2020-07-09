@@ -31,7 +31,6 @@
 									}										
 								}
 								
-								
 								Statement stmt = connDB.getConn().createStatement();							
 								sql = ""
 										+ "SELECT p.id_prodotto," 

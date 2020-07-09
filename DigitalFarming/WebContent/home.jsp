@@ -75,7 +75,7 @@
                                 <span>Responsabile</span>
                                 <% if((Integer) request.getSession().getAttribute("tipo_utente") == 2){
             							 %>
-                                  	<a href="work_details.html"> <h3><%= bestiame %></h3></a><%} 
+                                  	<%} 
 										else { 
 										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3><%= bestiame %></h3></a>
                            				<%}%>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="single_gallery small_width">
                     <div class="thumb">
-                        <img src="images/macchinari.jpg" alt="">
+                        <img src="images/campi.jpg" alt="">
                     </div>
                     <div class="gallery_hover">
                             <div class="hover_inner">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="single_gallery">
                     <div class="thumb">
-                        <img src="images/campi.jpg" alt="">
+                        <img src="images/macchinari.jpg" alt="">
                     </div>
                     <div class="gallery_hover">
                     	<div class="hover_inner">
