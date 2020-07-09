@@ -4,7 +4,45 @@
 	<head>
 		<%@ include file="/partials/head.jsp" %>			
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotto_dettaglio.js"></script>
-		<title>Dettaglio Prodotto</title>		
+		<title>Dettaglio Prodotto</title>	
+		
+		<script type="text/javascript">
+		function Modifica() {
+  			
+  				document.getElementById("descrizione").style.display = 'block';
+  				document.getElementById("sesso").style.display = 'block';
+  				document.getElementById("data").style.display = 'block';
+  				document.getElementById("peso").style.display = 'block';
+  				document.getElementById("produzione").style.display = 'block';
+  				document.getElementById("controllo").style.display = 'block';
+  				document.getElementById("annulla").style.display = 'block'; 
+  				document.getElementById("salva").style.display = 'block'; 
+  	  			document.getElementById("desc").style.display = 'none';  
+  	  			document.getElementById("sex").style.display = 'none'; 	
+	  	  		document.getElementById("date").style.display = 'none'; 
+	  	  		document.getElementById("kg").style.display = 'none'; 
+	  	  		document.getElementById("prod").style.display = 'none'; 
+	  			document.getElementById("control").style.display = 'none'; 
+	  			document.getElementById("modifica").style.display = 'none'; 
+		}
+		function Annulla() {
+			document.getElementById("descrizione").style.display = 'none';
+			document.getElementById("sesso").style.display = 'none';
+			document.getElementById("data").style.display = 'none';
+			document.getElementById("peso").style.display = 'none';
+			document.getElementById("produzione").style.display = 'none';
+			document.getElementById("controllo").style.display = 'none';
+	  		document.getElementById("desc").style.display = 'block';  
+	  		document.getElementById("sex").style.display = 'block'; 	
+  	  		document.getElementById("date").style.display = 'block'; 
+  	  		document.getElementById("kg").style.display = 'block'; 
+  	  		document.getElementById("prod").style.display = 'block'; 
+  			document.getElementById("control").style.display = 'block'; 
+  			document.getElementById("modifica").style.display = 'block'; 
+  			document.getElementById("annulla").style.display = 'none'; 
+  			document.getElementById("salva").style.display = 'none'; 
+	}
+		</script>		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		
@@ -67,12 +105,7 @@
 											immaginePrincipale = "<img class='showImmagineProdotto' src='"+"images/prodotti/"+result.getInt("id_prodotto")+"/"+result.getString("filename")+"'  alt='"+filename+"/"+result.getString("filename")+"' alt='"+filename+"' />";		
 											
 											nomeProdotto = result.getString("nome");													
-											if(result.getString("prezzo_scontato") != null){																							
-												prezzoProdotto = "<span style='color: #DC483E;'>&euro; "+String.valueOf(new SystemInformation().truncateDecimal(result.getFloat("prezzo_scontato") * (1+(result.getFloat("aliquota")/100)), 2))+"/"+result.getString("unita")+"*</span>"; 
-											}
-											else{												
-												prezzoProdotto = "&euro; "+String.valueOf(new SystemInformation().truncateDecimal(result.getFloat("prezzo_base") * (1+(result.getFloat("aliquota")/100)), 2))+"/"+result.getString("unita");
-											}																									
+																																	
 											descrizioneAbbreviata = result.getString("descrizione_abbreviata");
 											descrizione = result.getString("descrizione");
 											categoriaProdotto = "Categoria: <a href='"+request.getContextPath()+"/categoria.jsp?idcat="+result.getInt("id_categoria")+"'>"+result.getString("categoria")+"</a>";											
@@ -80,6 +113,8 @@
 											quantitaProdotto = result.getInt("quantita_disponibile");
 											sesso=result.getString("sesso");
 											data=result.getString("data");
+											produzione=result.getInt("produzione");
+											controllo=result.getString("controllo");
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
@@ -121,31 +156,16 @@
 					<div class="right">
 						<p class="nomeProdotto"><%=nomeProdotto %></p>
 						<p class="categoriaProdotto"><%=categoriaProdotto %></p>
-						<p class="prezzoProdotto">Razza : <%=descrizione %></p>
-						<p class="prezzoProdotto">Sesso : <%=sesso %></p>
-						<p class="prezzoProdotto">Data : <%=data %></p>
-						<p class="prezzoProdotto"><%=prezzoProdotto %> - 
-						<%
-							if(quantitaProdotto > 0){
-								%>
-								Quantit&agrave; Disponibile: <%=quantitaProdotto %>
-								<%												
-							}
-							else{
-								%>
-								<span style="color: #DC483E;">Quantit&agrave; Disponibile: <%=quantitaProdotto %></span>
-								<%																												
-							}
-						%>						
-						</p>
-						<%
-							if(quantitaProdotto > 0){
-								%>
-								<button class='userButtonAggiungiAlCarrello product-button' data-idprodotto='<%=idProdotto%>'>Aggiungi Al Carrello</button>
-								<%												
-							}
-						%>						
-						<p class="descrizioneAbbreviataProdotto"><%=descrizioneAbbreviata %></p>
+						<p class="prezzoProdotto" >Razza : <b id="desc"><%=descrizione %></b> <input style="display:none" type="text" id="descrizione" name="descrizione" value="<%=descrizione %>"></p>
+						<p class="prezzoProdotto" >Sesso : <b id="sex"><%=sesso %></b> <input style="display:none" type="text" id="sesso" name="sesso" value="<%=sesso %>"></p>
+						<p class="prezzoProdotto" >Data : <b id="date"><%=data %></b> <input style="display:none" type="text" id="data" name="data" value="<%=data %>"></p>
+						<p class="prezzoProdotto" >Peso animale:<b id="kg"><%=quantitaProdotto %></b> <input style="display:none" type="text" id="peso" name="peso" value="<%=quantitaProdotto %>"> Kg </p>
+						<p class="prezzoProdotto" >Produzione: <b id="prod"><%=produzione %></b> <input style="display:none" type="text" id="produzione" name="produzione" value="<%=produzione %>"></p>
+						<p class="prezzoProdotto" >Controllo: <b id="control"><%=controllo %> </b><input style="display:none" type="text" id="controllo" name="controllo" value="<%=controllo %>"></p>
+						
+						<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
+						<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
+						<p><button id="salva" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Salva()">Salva modifica</button>			</p>	
 						
 						
 						

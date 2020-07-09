@@ -71,9 +71,6 @@
 													output += result.getString("descrizione");
 																																					
 												output += "</div>";
-												output += "<div class='product-button' data-idprodotto='"+result.getInt("id_prodotto")+"'>";
-													output += "<a href='#'>Aggiungi al Carrello</a>";
-												output += "</div>";
 											output += "</div>";														
 										}										
 									}

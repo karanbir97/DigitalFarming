@@ -73,11 +73,11 @@
                     <div class="gallery_hover">
                         <div class="hover_inner">
                                 <span>Responsabile</span>
-                                <% if((Integer) request.getSession().getAttribute("tipo_utente") == 2){
-            							 %>
+                                <% if(((Integer) request.getSession().getAttribute("tipo_utente") == 2) || ((Integer) request.getSession().getAttribute("tipo_utente") == 1)){%>
+                                  	<a href="work_details.html"> <h3><%= bestiame %></h3></a>
                                   	<%} 
 										else { 
-										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3><%= bestiame %></h3></a>
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Gestione bestiame</h3></a>
                            				<%}%>
                            				
                            				
@@ -92,11 +92,11 @@
                     <div class="gallery_hover">
                             <div class="hover_inner">
                                     <span>Responsabile</span>
-                                    <% if((Integer) request.getSession().getAttribute("tipo_utente") == 3){
+                                    <% if((Integer) request.getSession().getAttribute("tipo_utente") == 3 || ((Integer) request.getSession().getAttribute("tipo_utente") == 1)){
             							 %>
                                   	<a href="work_details.html"> <h3><%= macchinari %></h3></a><%} 
 										else { 
-										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3><%= macchinari %></h3></a>
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Gestione macchinari</h3></a>
                            				<%}%>	
                             </div>
                         </div>
@@ -108,11 +108,11 @@
                     <div class="gallery_hover">
                     	<div class="hover_inner">
                     		<span>Responsabile</span>
-                    		<% if((Integer) request.getSession().getAttribute("tipo_utente") == 4){
+                    		<% if((Integer) request.getSession().getAttribute("tipo_utente") == 4 || ((Integer) request.getSession().getAttribute("tipo_utente") == 1)){
             							 %>
                                   	<a href="work_details.html"> <h3><%= raccolta %></h3></a><%} 
 										else { 
-										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3><%= raccolta %></h3></a>
+										%><a href="javascript:;" onclick="window.open('Errore/errore.html', 'titolo', 'width=600, height=300, resizable, status, scrollbars=1, center');">  <h3>Gestione raccolta</h3></a>
                            				<%}%>
                         </div>
                     </div>
