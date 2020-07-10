@@ -18,6 +18,7 @@
 			</div>
 		</div>
 
+
 		<div id="modalDettaglioOrdine">			
 			<div id="modalDettaglioOrdineNav">
 				<i class="fas fa-times chiudiModalDettaglioOrdine"></i>
