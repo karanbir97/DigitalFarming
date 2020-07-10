@@ -154,7 +154,7 @@
 						<%=immaginePrincipale %>
 						<%=immagini %>						
 					</div>
-					<%= cat %>
+					<%if(cat == 1){ %>
 					<%@ include file="/dati_bestiame.jsp" %>
 					<%}else { %>
 						<%@ include file="/dati_macchinari.jsp" %>

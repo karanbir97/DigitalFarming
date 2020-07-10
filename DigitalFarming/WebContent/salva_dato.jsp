@@ -17,17 +17,27 @@
 			        peso : <%= request.getParameter("peso") %> <br /> 
 			        produzione : <%= request.getParameter("produzione") %> <br /> 
 			        controllo : <%= request.getParameter("controllo") %> <br /> 
+			        
 			        <%
-			        	Integer idProdotto = Integer.parseInt(request.getParameter("idp"));
+			        	String id= request.getParameter("idcat");
+			        	Integer idProdotto = Integer.parseInt(request.getParameter("idcat"));
 			        	String output = "";
 			        	String sql = "";
+			        	String sql2 = "";
+			        	String msg = "";
 			        	String filename = "";
-			        	String nomeProdotto = request.getParameter("descrizione");		        	
+			        	String nomeProdotto = request.getParameter("descrizione");	
+			        	String nome="";
 			        	String quantitaProdotto = request.getParameter("peso");
+			        	String peso="";
 			        	String sesso=request.getParameter("sesso");
+			        	String sex="";
 			        	String data=request.getParameter("data");
+			        	String date="";
 			        	String prod=request.getParameter("produzione");
+			        	String produ="";
 			        	String controllo=request.getParameter("controllo");
+			        	String control="";
 			        	
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
@@ -60,29 +70,27 @@
 										while(result.next()) {																
 																																
 											
-											nomeProdotto = result.getString("nome");													
-												
-											quantitaProdotto = result.getString("quantita_disponibile");
-											sesso=result.getString("sesso");
-											data=result.getString("data");
-											produzione=result.getInt("produzione");
-											controllo=result.getString("controllo");
-																					
-											Statement stmt2 = connDB.getConn().createStatement();							
-											sql = ""
-													+ "SELECT filename " 
-													+ "FROM prodotti_immagini "
-													+ "WHERE id_prodotto = "+idProdotto+" AND is_default = 0 AND attivo = 1 " 
-													+ "ORDER BY id_immagine DESC; "; 
-											ResultSet result2 = stmt2.executeQuery(sql);								
-											if(!result2.wasNull()) {
-												while(result2.next()) { 
-													filename = new SystemInformation().getPathImmaginiProdottoHTML()+idProdotto+"/"+result2.getString("filename");
-													immagini += "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";
-												}
-											}										
-										
-										
+											nome = result.getString("descrizione");	
+											peso = result.getString("quantita_disponibile");
+											sex=result.getString("sesso");
+											date=result.getString("data");
+											produ=result.getString("produzione");
+											control=result.getString("controllo");
+											
+											PreparedStatement  stmt2 = null;
+											sql2 = ""
+													+ "UPDATE prodotti " 
+													+ "SET descrizione = 'mucca3' "
+													+ "WHERE id_prodotto = 20"; 
+											stmt2 = connDB.getConn().prepareStatement(sql2);
+											
+											if(stmt2.executeUpdate() == 1) {
+												msg = "Utenza Aggiornata con Successo";
+											}
+											else {
+												msg = "Errore Aggiornamento Password.";				
+											}	
+											
 										}										
 									}
 									else {
@@ -98,11 +106,19 @@
 						}
 						else {
 							nomeProdotto = connDB.getError();
-						}				        				        
+						}	
 			        %>
 			        
 				</div>
-			</div>
+				nome : <%= nome %> <br /> 
+		        sesso : <%= sex %> <br /> 
+		        data : <%= date %> <br /> 
+		        peso : <%= peso %> <br /> 
+		        produzione : <%= produ %> <br /> 
+		        controllo : <%= control %> <br /> 
+		        id : <%= id %> <br /> 
+		        msg : <%= msg %> <br /> 
+		</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>

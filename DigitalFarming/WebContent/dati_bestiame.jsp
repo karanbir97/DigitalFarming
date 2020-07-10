@@ -1,6 +1,6 @@
 <div class="right">
 	<form action="salva_dato.jsp" method="get">
-	<input type="hidden" id="id_cat" value="<%= idProdotto%>">
+	<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">
 	<p class="nomeProdotto"><%=nomeProdotto %></p>
 	<p class="categoriaProdotto"><%=categoriaProdotto %></p>
 	<p class="prezzoProdotto" >Razza : <b id="desc"><%=descrizione %></b> <input style="display:none" type="text" id="descrizione" name="descrizione" value="<%=descrizione %>"></p>
