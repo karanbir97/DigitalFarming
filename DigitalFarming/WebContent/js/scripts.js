@@ -121,7 +121,7 @@ function getCarrelloSmall(){
 			}
 		},
 		error: function(msg){
-			showAlert(1, "Impossibile Recuperare i dati.");
+			//showAlert(1, "Impossibile Recuperare i dati.");
 		}
 	});	
 	$("#loader").hide();		
@@ -155,7 +155,7 @@ function aggiungiAlCarrello(idProdotto, quantita){
 				}
 			},
 			error: function(msg){
-				showAlert(1, "Impossibile Recuperare i dati.");
+				//showAlert(1, "Impossibile Recuperare i dati.");
 			}
 		});
 		

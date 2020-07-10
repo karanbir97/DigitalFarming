@@ -15,13 +15,13 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_clienti.js"></script>					
-		<title>Prodotti clienti</title>		
+		<title>Gestione Dipendenti</title>		
 	</head>
 	<body onLoad="getClienti()">
 		<%@ include file="/partials/header.jsp" %>				
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Clienti</p> 
+				<p class="adminTitoloPagina">Gestione Dipendenti</p> 
 				<table id="clientiTable">
 					<thead class="adminHeadDataTable">
 						<tr>

@@ -53,7 +53,7 @@ $(document).ready(function(){
 					}
 				},
 				error: function(msg){
-					showAlert(1, "Impossibile Recuperare i dati.");
+					//showAlert(1, "Impossibile Recuperare i dati.");
 				}
 			});
 			
@@ -96,7 +96,7 @@ $(document).ready(function(){
 						}
 					},
 					error: function(msg){
-						showAlert(1, "Impossibile Recuperare i dati.");
+						//showAlert(1, "Impossibile Recuperare i dati.");
 					}
 				});
 				
@@ -136,7 +136,7 @@ $(document).ready(function(){
 						}
 					},
 					error: function(msg){
-						showAlert(1, "Impossibile Recuperare i dati.");
+						//showAlert(1, "Impossibile Recuperare i dati.");
 					}
 				});
 				
@@ -182,7 +182,7 @@ function getImmagini(){
 				}
 			},
 			error: function(msg){
-				showAlert(1, "Impossibile Recuperare i dati.");
+				//showAlert(1, "Impossibile Recuperare i dati.");
 			}
 		});
 		

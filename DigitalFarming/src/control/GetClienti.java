@@ -60,7 +60,7 @@ public class GetClienti extends HttpServlet {
 				sql = ""
 						+ "SELECT id_utente, email, codice_fiscale, nome, cognome, sesso, data_nascita "
 						+ "FROM utenti "
-						+ "WHERE attivo = 1 AND id_tipo = 2; ";
+						+ "WHERE attivo = 1 AND (id_tipo = 2 OR id_tipo = 3 OR id_tipo = 4); ";
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
