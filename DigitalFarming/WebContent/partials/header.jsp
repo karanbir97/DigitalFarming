@@ -30,7 +30,12 @@
 				
 			<div id="header-content">
 				<div class="logo">
-					<a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo_orizzontale.png" alt="Logo"></a>
+					<%		
+						if((Integer) request.getSession().getAttribute("tipo_utente") == null){ %>
+					<a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo_orizzontale.png" alt="Logo"></a> 
+					<% } else {%> 
+					<a href="<%=request.getContextPath()%>/home.jsp"><img src="<%=request.getContextPath()%>/images/logo_orizzontale.png" alt="Logo"></a> 
+					<% } %>
 				</div>			
 				<div class="icon-nav">
 					<i class="fas fa-bars"></i>

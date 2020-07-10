@@ -11,11 +11,6 @@
 		<%@ include file="/partials/header.jsp" %>				
 		<div id="content">
 			<div id="content-content">
-				<p style="text-align: center;">Inserisci le tue credenziali per accedere al pannello di amministrazione: <br/> <button data-href="<%=request.getContextPath()%>/registrati.jsp" class='userButtonRegistrati'>Registrati</button> </p>
-				
-				
-				
-				
 				<form action="#" method="POST" id="formAccedi">					
 				    <fieldset>
 				        <legend>Username</legend>

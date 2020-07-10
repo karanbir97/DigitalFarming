@@ -179,7 +179,7 @@ body{
 		float: right;
 		display: inline-block;	
 
-		border: 1px solid #green;
+		border: 1px solid green;
 		border-radius: 15px;
 		text-align: center;
 		line-height: 40px;
@@ -218,7 +218,7 @@ body{
 	    width:250px;
 	    height:250px;
 		background-color: green;
-		border: solid 3px green;
+		border: solid 3px white;
 	    border-radius: 15px;
 	    margin-top: 20px;
 	    padding: 10px;
@@ -314,7 +314,7 @@ body{
 		display: none;	
 	    width:250px;
 	    height:250px;
-		background-color: #276274;
+		background-color: green;
 		border: solid 3px #FFF;
 	    border-radius: 15px;
 	    margin-top: 20px;
@@ -519,7 +519,7 @@ body{
 	/***********************PAGINA ACCEDI************************/
 	/************************************************************/	
 	#content #content-content #formAccedi{
-		border: solid 2px #276274;		
+		border: solid 2px green;		
 		border-radius: 15px;	
 		padding: 10px;	
 		
@@ -535,9 +535,9 @@ body{
 	#content #content-content #formAccedi .submitForm{		
 		margin-top: 15px;
 		height: 40px;		
-		background-color: #green;		
+		background-color: green;		
 		border: 0;		
-		color: #276274;
+		color: white;
 		font-weight: bold;
 		cursor: pointer;			
 	}
@@ -726,7 +726,7 @@ body{
 	#content #content-content .adminTitoloPagina{
 		font-size: 30px;
 		font-weight: bold;
-		color: #276274;
+		color: green;
 	}	
 	
 	#content #content-content .adminTitoloPagina span{
@@ -744,7 +744,7 @@ body{
 		border: solid 1px #green;
 		border-radius: 5px;
 		padding: 10px;
-		color: #276274;
+		color: green;
 		overflow-x: auto;
 	}
 	
@@ -1253,20 +1253,20 @@ body{
 		padding-top: 5px;
 	}
 	#content .categoriaProdotto .product:hover .product-title{
-		background-color: #276274;	
+		background-color: green;	
 		color: #FFF;	
 	}
 	#content .categoriaProdotto .product .product-price{	
 		height: 25px;
 		text-align: center;
 		font-weight: bold;	
-		color: #276274;
+		color: green;
 	}
 	#content .categoriaProdotto .product .product-button{	
 		visibility: hidden;
 		height: 40px;
 		text-align: center;
-		background-color: #green;
+		background-color: green;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;	
 	}
@@ -1279,7 +1279,7 @@ body{
 		text-decoration: none;	
 	}
 	#content .categoriaProdotto .product:hover .product-button a{
-		color: #276274;
+		color: green;
 	}
 
 
@@ -1344,7 +1344,7 @@ body{
 	#content #content-content .dettaglioProdotto .right .nomeProdotto{
 		font-size: 30px;
 		font-weight: bold;
-		color: #276274;	
+		color: green;	
 		text-align: left;
 		margin: 0;		
 	}
@@ -1369,8 +1369,8 @@ body{
 		overflow-y: auto;
 	}
 	#content #content-content .userButtonAggiungiAlCarrello{	
-		background-color: #276274;
-		border: solid 1px #276274;
+		background-color: green;
+		border: solid 1px green;
 		height: 40px;		
 		color: #FFF;
 		text-transform: uppercase;				
