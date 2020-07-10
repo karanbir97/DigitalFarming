@@ -65,6 +65,7 @@
 			        	Integer quantitaProdotto = 0;
 			        	String sesso="";
 			        	String data="";
+			        	Integer cat=0;
 			        	Integer produzione=0;
 			        	String controllo="";
 			        	ConnessioneDB connDB = new ConnessioneDB();
@@ -109,7 +110,7 @@
 											descrizioneAbbreviata = result.getString("descrizione_abbreviata");
 											descrizione = result.getString("descrizione");
 											categoriaProdotto = "Categoria: <a href='"+request.getContextPath()+"/categoria.jsp?idcat="+result.getInt("id_categoria")+"'>"+result.getString("categoria")+"</a>";											
-											
+											cat=result.getInt("id_categoria");
 											quantitaProdotto = result.getInt("quantita_disponibile");
 											sesso=result.getString("sesso");
 											data=result.getString("data");
@@ -153,23 +154,11 @@
 						<%=immaginePrincipale %>
 						<%=immagini %>						
 					</div>
-					<div class="right">
-						<p class="nomeProdotto"><%=nomeProdotto %></p>
-						<p class="categoriaProdotto"><%=categoriaProdotto %></p>
-						<p class="prezzoProdotto" >Razza : <b id="desc"><%=descrizione %></b> <input style="display:none" type="text" id="descrizione" name="descrizione" value="<%=descrizione %>"></p>
-						<p class="prezzoProdotto" >Sesso : <b id="sex"><%=sesso %></b> <input style="display:none" type="text" id="sesso" name="sesso" value="<%=sesso %>"></p>
-						<p class="prezzoProdotto" >Data : <b id="date"><%=data %></b> <input style="display:none" type="text" id="data" name="data" value="<%=data %>"></p>
-						<p class="prezzoProdotto" >Peso animale:<b id="kg"><%=quantitaProdotto %></b> <input style="display:none" type="text" id="peso" name="peso" value="<%=quantitaProdotto %>"> Kg </p>
-						<p class="prezzoProdotto" >Produzione: <b id="prod"><%=produzione %></b> <input style="display:none" type="text" id="produzione" name="produzione" value="<%=produzione %>"></p>
-						<p class="prezzoProdotto" >Controllo: <b id="control"><%=controllo %> </b><input style="display:none" type="text" id="controllo" name="controllo" value="<%=controllo %>"></p>
-						
-						<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
-						<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
-						<p><button id="salva" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Salva()">Salva modifica</button>			</p>	
-						
-						
-						
-					</div>
+					<%= cat %>
+					<%@ include file="/dati_bestiame.jsp" %>
+					<%}else { %>
+						<%@ include file="/dati_macchinari.jsp" %>
+					<% }%>
 				</div>        			        
 			</div>
 		</div>

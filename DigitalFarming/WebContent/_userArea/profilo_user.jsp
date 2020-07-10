@@ -3,17 +3,7 @@
 <!DOCTYPE html>
 <html lang = "it">
 	<head>
-		<% 	
-			CheckSession ck = new CheckSession(0, request.getSession());	
-			if(ck.getRedirect()){
-				String path = request.getContextPath()+ck.getUrlRedirect();		
-				%>		
-					<script>
-						window.location.href = '<%=path%>';
-					</script>			
-				<%	
-			} 
-		%>
+		
 		<%@ include file="/partials/head.jsp" %>
 		<script src="<%=request.getContextPath()%>/js/scripts_impostazioni_profilo_user.js"></script>				
 		<title>Il mio profilo</title>		
