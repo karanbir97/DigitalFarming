@@ -89,7 +89,7 @@
                 </div>
                 <div class="single_gallery small_width">
                     <div class="thumb">
-                        <img src="images/macchinarii.jpg" alt="">
+                        <img src="images/campi.jpg" alt="">
                     </div>
                     <div class="gallery_hover">
                             <div class="hover_inner">
@@ -105,7 +105,7 @@
                 </div>
                 <div class="single_gallery">
                     <div class="thumb">
-                        <img src="images/campi.jpg" alt="">
+                        <img src="images/macchinari.jpg" alt="">
                     </div>
                     <div class="gallery_hover">
                     	<div class="hover_inner">
