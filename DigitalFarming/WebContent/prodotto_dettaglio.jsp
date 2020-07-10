@@ -156,9 +156,11 @@
 					</div>
 					<%if(cat == 1){ %>
 					<%@ include file="/dati_bestiame.jsp" %>
-					<%}else { %>
+					<%}else if(cat == 2){ %>
 						<%@ include file="/dati_macchinari.jsp" %>
-					<% }%>
+					<%}else if(cat == 3){ %>
+					<%@ include file="/dati_campo.jsp" %>
+					<%} %>
 				</div>        			        
 			</div>
 		</div>
