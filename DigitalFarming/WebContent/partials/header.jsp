@@ -43,7 +43,7 @@
 				</div>
 					<%		
 						if((Integer) request.getSession().getAttribute("tipo_utente") == null){
-							%><%@ include file="/partials/nav-ospite.jsp" %><%
+							%><%@ include file="/partials/nav-index.jsp" %><%
 						} 
 						else if((Integer) request.getSession().getAttribute("tipo_utente") == 1){ 
 							%><%@ include file="/partials/nav-admin.jsp" %><%

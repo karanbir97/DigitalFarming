@@ -63,6 +63,8 @@ body{
 		padding-left: 10px;
 	} 
 	
+	
+	
 	/**********************************/
 	/*************NAV OSPITE***********/
 	/**********************************/
@@ -151,6 +153,24 @@ body{
 		color: #FFF;
 		font-weight: bold;
 	}	
+	
+	/**********************************/
+	/*************NAV INDEX***********/
+	/**********************************/
+	
+	.logo{
+		display: inline-block;
+		float:left
+		width: 25%;
+		height: 100%;
+		/*background-color: green;*/
+	}
+	.logo img{
+		width: 100%;
+		height: auto;	
+		max-height: 150px;
+		padding-left: 150%;
+	} 
 	
 	/**********************************/
 	/*************NAV ADMIN***********/
