@@ -102,9 +102,69 @@ $(document).ready(function(){
 		
 });
 
+function getCarrelloSmall(){ 
+	$("#loader").show();	
+	$.ajax({
+		url: absolutePath+"/GetCarrelloSmall",
+		type: "POST",
+		dataType: 'JSON',
+		async: false,
+		data: {
+			"richiesta": 1
+		},
+		success:function(msg){
+			if(!msg.risultato){
+				showAlert(1, msg.errore);
+			}
+			else{
+				$(".numeroProdottiCarrello").html(msg.contenuto);
+			}
+		},
+		error: function(msg){
+			showAlert(1, "Impossibile Recuperare i dati.");
+		}
+	});	
+	$("#loader").hide();		
+}
 
-
-
+function aggiungiAlCarrello(idProdotto, quantita){
+	if(idProdotto > 0 && quantita > 0){
+		$("#loader").show();
+		
+		$.ajax({
+			url: absolutePath+"/AggiungiAlCarrello",
+			type: "POST",
+			dataType: 'JSON',
+			async: false,
+			data: {
+				"idProdotto": idProdotto,
+				"quantita": quantita
+			},
+			success:function(msg){
+				if(!msg.risultato){
+					showAlert(1, msg.errore);
+				}
+				else{
+					if(msg.redirect){
+						window.location.href = absolutePath+msg.urlRedirect;
+					}
+					else{
+						getCarrelloSmall();
+						showAlert(0, msg.contenuto);
+					}					
+				}
+			},
+			error: function(msg){
+				showAlert(1, "Impossibile Recuperare i dati.");
+			}
+		});
+		
+		$("#loader").hide();		
+	}
+	else{
+		showAlert(1, "Errore Parametri.");
+	}	
+}
 
 //validaCF('CODICEFISCALE');
 function validaCF(cf){
