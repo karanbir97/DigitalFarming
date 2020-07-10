@@ -28,6 +28,7 @@
 							<li><a href="categoria.jsp?idcat=3">Gestione Campi</a></li>
  						</ul>
 					</li>
+					<li class="has-child">
 					<li><a href="<%=request.getContextPath()%>/chi_siamo.jsp">Chi siamo</a></li>
 					<li><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
 				</ul>										
