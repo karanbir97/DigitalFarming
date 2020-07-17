@@ -1,5 +1,5 @@
 <div class="right">
-	<form action="salva_dato.jsp" method="get">
+	<form action="salva_dato_m.jsp" method="get">
 	<input type="hidden" id="id_cat" value="<%= idProdotto%>">
 	<p class="nomeProdotto"><%=nomeProdotto %></p>
 	<p class="categoriaProdotto"><%=categoriaProdotto %></p>

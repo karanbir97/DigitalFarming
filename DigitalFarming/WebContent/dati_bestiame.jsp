@@ -10,8 +10,24 @@
 	<p class="prezzoProdotto" >Produzione: <b id="prod"><%=produzione %></b> <input style="display:none" type="text" id="produzione" name="produzione" value="<%=produzione %>"></p>
 	<p class="prezzoProdotto" >Controllo: <b id="control"><%=controllo %> </b><input style="display:none" type="text" id="controllo" name="controllo" value="<%=controllo %>"></p>
 	
-	<input type="submit" id="salva" style="display:none" class='userButtonAggiungiAlCarrello' value="Salva dati">	
-</form>
+	<input type="submit" id="salva" name="salva" style="display:none" class='userButtonAggiungiAlCarrello' value="Salva dati">
+	</form>
+	<br/>
+	<form action="error.jsp" method="get">
+	<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">
+	<input type="hidden" id="nome" name="nome" value="<%=nomeProdotto %>">
+	<input type="hidden" id="categoria" name="categoria" value="<%=categoriaProdotto %>">
+	<input type="hidden" id="descrizione" name="descrizione" value="<%=descrizione %>">
+	<input type="hidden" id="sesso" name="sesso" value="<%= sesso%>">
+	<input type="hidden" id="data" name="data" value="<%= data%>">
+	<input type="hidden" id="peso" name="peso" value="<%= quantitaProdotto%>">
+	<input type="hidden" id="produzione" name="produzione" value="<%= produzione%>">
+	<input type="hidden" id="controllo" name="controllo" value="<%= controllo%>">
+	
+	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina prodotto">		
+	
+	</form>
+	
 	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
 	<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
 	

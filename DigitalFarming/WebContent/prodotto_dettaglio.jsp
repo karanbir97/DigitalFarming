@@ -17,6 +17,7 @@
   				document.getElementById("controllo").style.display = 'block';
   				document.getElementById("annulla").style.display = 'block'; 
   				document.getElementById("salva").style.display = 'block'; 
+  				document.getElementById("elimina").style.display = 'block'; 
   	  			document.getElementById("desc").style.display = 'none';  
   	  			document.getElementById("sex").style.display = 'none'; 	
 	  	  		document.getElementById("date").style.display = 'none'; 
@@ -40,7 +41,8 @@
   			document.getElementById("control").style.display = 'block'; 
   			document.getElementById("modifica").style.display = 'block'; 
   			document.getElementById("annulla").style.display = 'none'; 
-  			document.getElementById("salva").style.display = 'none'; 
+  			document.getElementById("salva").style.display = 'none';
+  			document.getElementById("elimina").style.display = 'none'; 
 	}
 		</script>		
 	</head>

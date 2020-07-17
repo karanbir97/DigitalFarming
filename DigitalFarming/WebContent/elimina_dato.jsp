@@ -21,6 +21,7 @@
 			        <%
 			        	String id= request.getParameter("idcat");
 			        	Integer idProdotto = Integer.parseInt(request.getParameter("idcat"));
+			        	String idcat="";
 			        	String output = "";
 			        	String sql = "";
 			        	String sql2 = "";
@@ -73,6 +74,7 @@
 										result.beforeFirst();										
 										while(result.next()) {																
 											
+											idcat=result.getString("id_categoria");
 											nome = result.getString("descrizione");
 											peso = result.getInt("quantita_disponibile");
 											sex=result.getString("sesso");
@@ -87,15 +89,10 @@
 								}
 								
 								PreparedStatement  stmt2 = null;
-								sql2 = "UPDATE prodotti SET descrizione = ? , quantita_disponibile = ? , sesso = ? , data = ? , produzione = ? , controllo = ? WHERE id_prodotto = ?"; 
+								sql2 = "UPDATE prodotti SET attivo = ? WHERE id_prodotto = ?"; 
 								stmt2 = connDB.getConn().prepareStatement(sql2);
-								stmt2.setString(1, nomeProdotto);
-								stmt2.setString(2, quantitaProdotto);
-								stmt2.setString(3, sesso);
-								stmt2.setString(4, data);
-								stmt2.setString(5, prod);
-								stmt2.setString(6, controllo);
-								stmt2.setInt(7, idProdotto);
+								stmt2.setInt(1, 0);
+								stmt2.setInt(2, idProdotto);
 								stmt2.executeUpdate();
 								
 								if(stmt2.executeUpdate() == 1) {
@@ -126,7 +123,7 @@
 						else {
 							nomeProdotto = connDB.getError();
 						}				        
-						response.sendRedirect("prodotto_dettaglio.jsp?idp="+idProdotto+"");
+						response.sendRedirect("categoria.jsp?idcat="+idcat+"");
 									
 			        %>
 			        
@@ -140,7 +137,6 @@
 		        id : <%= id %> <br /> 
 		        msg : <%= contenuto %> <br /> 
 		        msg : <%= errore %> <br /> 
-		        salva : <%= salva %> <br /> 
 		       
 		</div>
 		</div>
