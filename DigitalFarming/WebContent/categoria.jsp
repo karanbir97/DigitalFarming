@@ -35,12 +35,8 @@
 								sql = ""
 										+ "SELECT p.id_prodotto," 
 										+ "       p.nome, "
-										+ "       p.prezzo_base, "
 										+ "       p.descrizione, "
-										+ "       (SELECT valore FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, " 
-										+ "       (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita, "
-										+ "       (SELECT filename FROM prodotti_immagini WHERE id_prodotto = p.id_prodotto AND is_default = 1 AND attivo = 1) AS filename, "
-										+ "	      (SELECT prezzo FROM prodotti_sconti WHERE id_prodotto = p.id_prodotto AND attivo = 1 AND DATE(NOW()) >= data_da AND data_a >= DATE(NOW()) ORDER BY data_inserimento DESC LIMIT 1) AS prezzo_scontato "
+										+ "       (SELECT filename FROM prodotti_immagini WHERE id_prodotto = p.id_prodotto AND is_default = 1 AND attivo = 1) AS filename "
 										+ "FROM prodotti  AS p "
 										+ "WHERE p.attivo = 1 ";
 										if(idCategoria > 0) sql += "AND p.id_categoria = "+idCategoria+" ";										
