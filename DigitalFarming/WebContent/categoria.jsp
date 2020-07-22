@@ -14,6 +14,7 @@
 			        	Integer idCategoria = Integer.parseInt(request.getParameter("idcat"));
 			        	String output = "";
 			        	String sql = "";
+			        	String c="";
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
 							try {
@@ -72,11 +73,22 @@
 																																					
 												output += "</div>";
 											output += "</div>";														
-										}										
+										}
+										
 									}
 									else {
 										output = "<p class='adminTitoloPagina'>Nessun prodotto presente per la categoria selezionata.</p>";
-									}											
+									}
+									
+									if((Integer) request.getSession().getAttribute("tipo_utente") == 1){
+										
+										c += "<div  >";
+												c +="<a href='#'>";
+												c += "<img src='images/plus.png' height='400' width='400'/>";
+												c +="</a>";
+										c += "</div>";
+										
+									}
 								}
 								
 								connDB.getConn().close();
@@ -90,6 +102,7 @@
 						}				        				        
 			        %>
 			        <%= output %>
+			        <%= c %>
 			        
 				</div>
 			</div>

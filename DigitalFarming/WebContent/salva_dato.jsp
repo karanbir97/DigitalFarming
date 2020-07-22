@@ -139,8 +139,7 @@
 		        controllo : <%= control %> <br /> 
 		        id : <%= id %> <br /> 
 		        msg : <%= contenuto %> <br /> 
-		        msg : <%= errore %> <br /> 
-		        salva : <%= salva %> <br /> 
+		        msg : <%= errore %> <br />  
 		       
 		</div>
 		</div>
