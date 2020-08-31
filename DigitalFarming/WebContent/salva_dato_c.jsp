@@ -15,25 +15,19 @@
 			        <%
 			        	String id= request.getParameter("idcat");
 			        	Integer idProdotto = Integer.parseInt(request.getParameter("idcat"));
-			        	String idcat="";
 			        	String output = "";
 			        	String sql = "";
 			        	String sql2 = "";
 			        	String msg = "";
 			        	String filename = "";
 			        	String nomeProdotto = request.getParameter("descrizione");	
+			        	String coltura= request.getParameter("coltura");	
+			        	String varieta=request.getParameter("varieta");	
+			        	String quantita=request.getParameter("quantita");	
+			        	String data_semina=request.getParameter("data_semina");	
+			        	String data_raccolta=request.getParameter("data_raccolta");	
+			        	String dimensione_campo=request.getParameter("dimensione_campo");	
 			        	String nome="";
-			        	String quantitaProdotto = request.getParameter("peso");
-			        	Integer peso=0;
-			        	String sesso=request.getParameter("sesso");
-			        	String sex="";
-			        	String data=request.getParameter("data");
-			        	String date="";
-			        	String prod=request.getParameter("produzione");
-			        	String produ="";
-			        	String controllo=request.getParameter("controllo");
-			        	String control="";
-			        	String contenuto="";
 			        	Integer risultato=0;
 			        	String errore="";
 			        	
@@ -76,13 +70,13 @@
 										result.beforeFirst();										
 										while(result.next()) {																
 											
-											idcat=result.getString("id_categoria");
 											nome = result.getString("descrizione");
-											peso = result.getInt("peso");
-											sex=result.getString("sesso");
-											date=result.getString("data_nascita");
-											produ=result.getString("produzione");
-											control=result.getString("ultimo_controllo");
+											coltura = result.getString("coltura");
+											varieta=result.getString("varieta");
+											quantita=result.getInteger("quantita_semina");
+											data_semina=result.getString("data_semina");
+											data_raccolta=result.getString("data_raccolto");
+											dimensione_campo=result.getString("dimensioni_campo");
 										}										
 									}
 									else {
@@ -91,10 +85,15 @@
 								}
 								
 								PreparedStatement  stmt2 = null;
-								sql2 = "UPDATE prodotti SET attivo = ? WHERE id_prodotto = ?"; 
+								sql2 = "UPDATE prodotti SET descrizione = ? , coltura = ? , varieta = ? , data_nascita = ? , produzione = ? , ultimo_controllo = ? WHERE id_prodotto = ?"; 
 								stmt2 = connDB.getConn().prepareStatement(sql2);
-								stmt2.setInt(1, 0);
-								stmt2.setInt(2, idProdotto);
+								stmt2.setString(1, nomeProdotto);
+								stmt2.setString(2, coltura);
+								stmt2.setString(3, varieta);
+								stmt2.setString(4, quantita);
+								stmt2.setString(5, prod);
+								stmt2.setString(6, controllo);
+								stmt2.setInt(7, idProdotto);
 								stmt2.executeUpdate();
 								
 								if(stmt2.executeUpdate() == 1) {
@@ -125,7 +124,7 @@
 						else {
 							nomeProdotto = connDB.getError();
 						}				        
-						response.sendRedirect("categoria.jsp?idcat="+idcat+"");
+						response.sendRedirect("prodotto_dettaglio.jsp?idp="+idProdotto+"");
 									
 			        %>
 			        
@@ -138,7 +137,7 @@
 		        controllo : <%= control %> <br /> 
 		        id : <%= id %> <br /> 
 		        msg : <%= contenuto %> <br /> 
-		        msg : <%= errore %> <br /> 
+		        msg : <%= errore %> <br />  
 		       
 		</div>
 		</div>

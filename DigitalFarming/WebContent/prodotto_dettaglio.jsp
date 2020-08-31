@@ -7,45 +7,7 @@
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotto_dettaglio.js"></script>
 		<title>Dettaglio Prodotto</title>	
 		
-		<script type="text/javascript">
-		function Modifica() {
-  			
-  				document.getElementById("descrizione").style.display = 'block';
-  				document.getElementById("sesso").style.display = 'block';
-  				document.getElementById("data").style.display = 'block';
-  				document.getElementById("peso").style.display = 'block';
-  				document.getElementById("produzione").style.display = 'block';
-  				document.getElementById("controllo").style.display = 'block';
-  				document.getElementById("annulla").style.display = 'block'; 
-  				document.getElementById("salva").style.display = 'block'; 
-  				document.getElementById("elimina").style.display = 'block'; 
-  	  			document.getElementById("desc").style.display = 'none';  
-  	  			document.getElementById("sex").style.display = 'none'; 	
-	  	  		document.getElementById("date").style.display = 'none'; 
-	  	  		document.getElementById("kg").style.display = 'none'; 
-	  	  		document.getElementById("prod").style.display = 'none'; 
-	  			document.getElementById("control").style.display = 'none'; 
-	  			document.getElementById("modifica").style.display = 'none'; 
-		}
-		function Annulla() {
-			document.getElementById("descrizione").style.display = 'none';
-			document.getElementById("sesso").style.display = 'none';
-			document.getElementById("data").style.display = 'none';
-			document.getElementById("peso").style.display = 'none';
-			document.getElementById("produzione").style.display = 'none';
-			document.getElementById("controllo").style.display = 'none';
-	  		document.getElementById("desc").style.display = 'block';  
-	  		document.getElementById("sex").style.display = 'block'; 	
-  	  		document.getElementById("date").style.display = 'block'; 
-  	  		document.getElementById("kg").style.display = 'block'; 
-  	  		document.getElementById("prod").style.display = 'block'; 
-  			document.getElementById("control").style.display = 'block'; 
-  			document.getElementById("modifica").style.display = 'block'; 
-  			document.getElementById("annulla").style.display = 'none'; 
-  			document.getElementById("salva").style.display = 'none';
-  			document.getElementById("elimina").style.display = 'none'; 
-	}
-		</script>		
+		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		

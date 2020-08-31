@@ -13,6 +13,7 @@
     	String data=request.getParameter("data");
     	String prod=request.getParameter("produzione");
     	String controllo=request.getParameter("controllo");
+    	String coltura=request.getParameter("coltura");
     	
     	
 %>
@@ -30,7 +31,7 @@
         <%}%>
         <div class="row">
             <div class="col-12-xs text-center">
-            	<%if(idProdotto == 22){ %>
+            	<%if((idProdotto == 22) || (idProdotto == 23) || (idProdotto == 24)){ %>
             	<form action="aggiungi_dato.jsp" method="get">
             	
 				<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">
@@ -48,14 +49,7 @@
             	<form action="elimina_dato.jsp" method="get">
             	
 				<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">
-				<input type="hidden" id="nome" name="nome" value="<%=nome %>">
-				<input type="hidden" id="categoria" name="categoria" value="<%=categoria %>">
-				<input type="hidden" id="descrizione" name="descrizione" value="<%=nomeProdotto %>">
-				<input type="hidden" id="sesso" name="sesso" value="<%= sesso%>">
-				<input type="hidden" id="data" name="data" value="<%= data%>">
-				<input type="hidden" id="peso" name="peso" value="<%= quantitaProdotto%>">
-				<input type="hidden" id="produzione" name="produzione" value="<%= prod%>">
-				<input type="hidden" id="controllo" name="controllo" value="<%= controllo%>">
+				
                 	<input type="submit" value="Si" class="btn btn-success btn-md">
                 	<input type="button" class="btn btn-danger btn-md" value="No" onClick="history.go(-1);return true;" name="button">
                 

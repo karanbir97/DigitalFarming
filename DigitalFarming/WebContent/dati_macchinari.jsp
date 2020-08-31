@@ -1,3 +1,44 @@
+<script type="text/javascript">
+		function Modifica() {
+  			
+  				document.getElementById("coltura").style.display = 'block';
+  				document.getElementById("varieta").style.display = 'block';
+  				document.getElementById("quantita").style.display = 'block';
+  				document.getElementById("data_semina").style.display = 'block';
+  				document.getElementById("data_raccolta").style.display = 'block';
+  				document.getElementById("dimensione_campo").style.display = 'block';
+  				document.getElementById("annulla").style.display = 'block'; 
+  				document.getElementById("salva").style.display = 'block'; 
+  				document.getElementById("elimina").style.display = 'block'; 
+  				
+  				document.getElementById("c").style.display = 'none';   
+  	  			document.getElementById("v").style.display = 'none'; 	
+	  	  		document.getElementById("q").style.display = 'none'; 
+	  	  		document.getElementById("ds").style.display = 'none'; 
+	  	  		document.getElementById("dr").style.display = 'none'; 
+	  			document.getElementById("dc").style.display = 'none'; 
+	  			document.getElementById("modifica").style.display = 'none'; 
+		}
+		function Annulla() {
+			document.getElementById("coltura").style.display = 'none';
+			document.getElementById("varieta").style.display = 'none';
+			document.getElementById("quantita").style.display = 'none';
+			document.getElementById("data_semina").style.display = 'none';
+			document.getElementById("data_raccolta").style.display = 'none';
+			document.getElementById("dimensione_campo").style.display = 'none';
+	  		document.getElementById("c").style.display = 'block';  
+	  		document.getElementById("v").style.display = 'block'; 	
+  	  		document.getElementById("q").style.display = 'block'; 
+  	  		document.getElementById("ds").style.display = 'block'; 
+  	  		document.getElementById("dr").style.display = 'block'; 
+  			document.getElementById("dc").style.display = 'block'; 
+  			document.getElementById("modifica").style.display = 'block'; 
+  			document.getElementById("annulla").style.display = 'none'; 
+  			document.getElementById("salva").style.display = 'none';
+  			document.getElementById("elimina").style.display = 'none'; 
+	}
+</script>
+
 <div class="right">
 	<form action="salva_dato_m.jsp" method="get">
 	<input type="hidden" id="id_cat" value="<%= idProdotto%>">
