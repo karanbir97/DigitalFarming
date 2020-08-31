@@ -76,14 +76,24 @@
 										output = "<p class='adminTitoloPagina'>Nessun prodotto presente per la categoria selezionata.</p>";
 									}
 									
-									if((Integer) request.getSession().getAttribute("tipo_utente") == 1){
-										
-										c += "<div  >";
-												c +="<a href='#'>";
-												c += "<img src='images/plus.png' height='400' width='400'/>";
-												c +="</a>";
+									if(((Integer) request.getSession().getAttribute("tipo_utente") == 1 ) && idCategoria == 1){
+										c += "<div class='product'>";
+										c += "<div class='product-image' data-idprodotto='22'>";
+												c += "<img src='images/plus.png'/>";
 										c += "</div>";
-										
+										c += "</div>";
+									}else if(((Integer) request.getSession().getAttribute("tipo_utente") == 1 ) && idCategoria == 2){
+										c += "<div class='product'>";
+										c += "<div class='product-image' data-idprodotto='23'>";
+												c += "<img src='images/plus.png'/>";
+										c += "</div>";
+										c += "</div>";
+									}else if(((Integer) request.getSession().getAttribute("tipo_utente") == 1 ) && idCategoria == 3){
+										c += "<div class='product'>";
+										c += "<div class='product-image' data-idprodotto='24'>";
+												c += "<img src='images/plus.png'/>";
+										c += "</div>";
+										c += "</div>";
 									}
 								}
 								

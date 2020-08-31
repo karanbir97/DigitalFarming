@@ -3,6 +3,7 @@
 <html lang = "it">
 	<head>
 		<%@ include file="/partials/head.jsp" %>			
+		
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotto_dettaglio.js"></script>
 		<title>Dettaglio Prodotto</title>	
 		
@@ -70,6 +71,12 @@
 			        	Integer cat=0;
 			        	Integer produzione=0;
 			        	String controllo="";
+			        	String coltura="";
+			        	String varieta="";
+			        	Integer quantita=0;
+			        	String data_semina="";
+			        	String data_raccolta="";
+			        	Integer dimensione_campo=0;
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
 							try {
@@ -77,17 +84,25 @@
 								sql = ""
 										+ "SELECT p.id_prodotto," 
 										+ "       p.nome, "
-										+ "       p.id_categoria, "									
-										+ "       p.prezzo_base, " 
-										+ "       p.descrizione_abbreviata, " 
+										+ "       p.id_categoria, "	
 										+ "       p.descrizione, " 
-										+ "       p.quantita_disponibile, " 
 										+ "       p.sesso, " 
-										+ "       p.data, " 
+										+ "       p.data_nascita, " 
 										+ "       p.produzione, " 
-										+ "       p.controllo, " 
-										+ "       (SELECT valore FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, " 
-										+ "       (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita, "
+										+ "       p.ultimo_controllo, " 
+										+ "       p.peso, " 
+										+ "       p.razza, " 
+										+ "       p.tipo_macchinario, " 
+										+ "       p.targa, " 
+										+ "       p.ultima_revisione, " 
+										+ "       p.immatricolazione, " 
+										+ "       p.capacita_serbatoio, " 
+										+ "       p.coltura, " 
+										+ "       p.varieta, " 
+										+ "       p.quantita_semina, " 
+										+ "       p.data_semina, " 
+										+ "       p.data_raccolto, " 
+										+ "       p.dimensioni_campo, " 
 										+ "       (SELECT nome FROM prodotti_categorie WHERE id_categoria = p.id_categoria) AS categoria, "
 										+ "       (SELECT filename FROM prodotti_immagini WHERE id_prodotto = p.id_prodotto AND is_default = 1 AND attivo = 1) AS filename, "
 										+ "	      (SELECT prezzo FROM prodotti_sconti WHERE id_prodotto = p.id_prodotto AND attivo = 1 AND DATE(NOW()) >= data_da AND data_a >= DATE(NOW()) ORDER BY data_inserimento DESC LIMIT 1) AS prezzo_scontato "
@@ -109,15 +124,21 @@
 											
 											nomeProdotto = result.getString("nome");													
 																																	
-											descrizioneAbbreviata = result.getString("descrizione_abbreviata");
+											descrizioneAbbreviata = result.getString("razza");
 											descrizione = result.getString("descrizione");
 											categoriaProdotto = "Categoria: <a href='"+request.getContextPath()+"/categoria.jsp?idcat="+result.getInt("id_categoria")+"'>"+result.getString("categoria")+"</a>";											
 											cat=result.getInt("id_categoria");
-											quantitaProdotto = result.getInt("quantita_disponibile");
+											quantitaProdotto = result.getInt("peso");
 											sesso=result.getString("sesso");
-											data=result.getString("data");
+											data=result.getString("data_nascita");
 											produzione=result.getInt("produzione");
-											controllo=result.getString("controllo");
+											controllo=result.getString("ultimo_controllo");
+											coltura=result.getString("coltura");
+											varieta=result.getString("varieta");
+											quantita=result.getInt("quantita_semina");
+											data_semina=result.getString("data_semina");
+											data_raccolta=result.getString("data_raccolto");
+											dimensione_campo=result.getInt("dimensioni_campo");
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
@@ -139,7 +160,7 @@
 									else {
 										nomeProdotto = "Prodotto Non Trovato.";
 									}											
-								}
+								}															
 								
 								connDB.getConn().close();
 							}
@@ -154,7 +175,7 @@
 				<div class="dettaglioProdotto">	
 					<div class="left">
 						<%=immaginePrincipale %>
-						<%=immagini %>						
+						<%=immagini %>							
 					</div>
 					<%if(cat == 1){ %>
 					<%@ include file="/dati_bestiame.jsp" %>
@@ -162,6 +183,12 @@
 						<%@ include file="/dati_macchinari.jsp" %>
 					<%}else if(cat == 3){ %>
 					<%@ include file="/dati_campo.jsp" %>
+					<%} else if(cat == 4){ %>
+					<%@ include file="/aggiungi_bestiame.jsp" %>
+					<%} else if(cat == 5){ %>
+					<%@ include file="/aggiungi_macchinari.jsp" %>
+					<%} else if(cat == 6){ %>
+					<%@ include file="/aggiungi_bestiame.jsp" %>
 					<%} %>
 				</div>        			        
 			</div>

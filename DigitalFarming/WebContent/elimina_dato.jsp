@@ -51,17 +51,25 @@
 								sql = ""
 										+ "SELECT p.id_prodotto," 
 										+ "       p.nome, "
-										+ "       p.id_categoria, "									
-										+ "       p.prezzo_base, " 
-										+ "       p.descrizione_abbreviata, " 
+										+ "       p.id_categoria, "	
 										+ "       p.descrizione, " 
-										+ "       p.quantita_disponibile, " 
 										+ "       p.sesso, " 
-										+ "       p.data, " 
+										+ "       p.data_nascita, " 
 										+ "       p.produzione, " 
-										+ "       p.controllo, " 
-										+ "       (SELECT valore FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, " 
-										+ "       (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita, "
+										+ "       p.ultimo_controllo, " 
+										+ "       p.peso, " 
+										+ "       p.razza, " 
+										+ "       p.tipo_macchinario, " 
+										+ "       p.targa, " 
+										+ "       p.ultima_revisione, " 
+										+ "       p.immatricolazione, " 
+										+ "       p.capacita_serbatoio, " 
+										+ "       p.coltura, " 
+										+ "       p.varieta, " 
+										+ "       p.quantita_semina, " 
+										+ "       p.data_semina, " 
+										+ "       p.data_raccolto, " 
+										+ "       p.dimensioni_campo, " 
 										+ "       (SELECT nome FROM prodotti_categorie WHERE id_categoria = p.id_categoria) AS categoria, "
 										+ "       (SELECT filename FROM prodotti_immagini WHERE id_prodotto = p.id_prodotto AND is_default = 1 AND attivo = 1) AS filename, "
 										+ "	      (SELECT prezzo FROM prodotti_sconti WHERE id_prodotto = p.id_prodotto AND attivo = 1 AND DATE(NOW()) >= data_da AND data_a >= DATE(NOW()) ORDER BY data_inserimento DESC LIMIT 1) AS prezzo_scontato "
@@ -76,11 +84,11 @@
 											
 											idcat=result.getString("id_categoria");
 											nome = result.getString("descrizione");
-											peso = result.getInt("quantita_disponibile");
+											peso = result.getInt("peso");
 											sex=result.getString("sesso");
-											date=result.getString("data");
+											date=result.getString("data_nascita");
 											produ=result.getString("produzione");
-											control=result.getString("controllo");
+											control=result.getString("ultimo_controllo");
 										}										
 									}
 									else {
