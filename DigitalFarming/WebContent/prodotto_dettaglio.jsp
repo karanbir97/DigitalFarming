@@ -39,6 +39,11 @@
 			        	String data_semina="";
 			        	String data_raccolta="";
 			        	Integer dimensione_campo=0;
+			        	String tipo="";
+			        	String targa="";
+			        	String revisione="";
+			        	String immatricolazione="";
+			        	Integer serbatoio=0;
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
 							try {
@@ -101,6 +106,11 @@
 											data_semina=result.getString("data_semina");
 											data_raccolta=result.getString("data_raccolto");
 											dimensione_campo=result.getInt("dimensioni_campo");
+											tipo=result.getString("tipo_macchinario");
+											targa=result.getString("targa");
+											revisione=result.getString("ultima_revisione");
+											immatricolazione=result.getString("immatricolazione");
+											serbatoio=result.getInt("capacita_serbatoio");
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""

@@ -1,37 +1,34 @@
 <script type="text/javascript">
 		function Modifica() {
   			
-  				document.getElementById("coltura").style.display = 'block';
-  				document.getElementById("varieta").style.display = 'block';
-  				document.getElementById("quantita").style.display = 'block';
-  				document.getElementById("data_semina").style.display = 'block';
-  				document.getElementById("data_raccolta").style.display = 'block';
-  				document.getElementById("dimensione_campo").style.display = 'block';
+  				document.getElementById("tipo").style.display = 'block';
+  				document.getElementById("targa").style.display = 'block';
+  				document.getElementById("revisione").style.display = 'block';
+  				document.getElementById("immatricolazione").style.display = 'block';
+  				document.getElementById("serbatoio").style.display = 'block';
   				document.getElementById("annulla").style.display = 'block'; 
   				document.getElementById("salva").style.display = 'block'; 
   				document.getElementById("elimina").style.display = 'block'; 
   				
-  				document.getElementById("c").style.display = 'none';   
-  	  			document.getElementById("v").style.display = 'none'; 	
-	  	  		document.getElementById("q").style.display = 'none'; 
-	  	  		document.getElementById("ds").style.display = 'none'; 
-	  	  		document.getElementById("dr").style.display = 'none'; 
-	  			document.getElementById("dc").style.display = 'none'; 
+  				document.getElementById("ti").style.display = 'none';   
+  	  			document.getElementById("ta").style.display = 'none'; 	
+	  	  		document.getElementById("re").style.display = 'none'; 
+	  	  		document.getElementById("im").style.display = 'none'; 
+	  	  		document.getElementById("se").style.display = 'none'; 
 	  			document.getElementById("modifica").style.display = 'none'; 
 		}
 		function Annulla() {
-			document.getElementById("coltura").style.display = 'none';
-			document.getElementById("varieta").style.display = 'none';
-			document.getElementById("quantita").style.display = 'none';
-			document.getElementById("data_semina").style.display = 'none';
-			document.getElementById("data_raccolta").style.display = 'none';
-			document.getElementById("dimensione_campo").style.display = 'none';
-	  		document.getElementById("c").style.display = 'block';  
-	  		document.getElementById("v").style.display = 'block'; 	
-  	  		document.getElementById("q").style.display = 'block'; 
-  	  		document.getElementById("ds").style.display = 'block'; 
-  	  		document.getElementById("dr").style.display = 'block'; 
-  			document.getElementById("dc").style.display = 'block'; 
+			document.getElementById("tipo").style.display = 'none';
+			document.getElementById("targa").style.display = 'none';
+			document.getElementById("revisione").style.display = 'none';
+			document.getElementById("immatricolazione").style.display = 'none';
+			document.getElementById("serbatoio").style.display = 'none';
+			
+	  		document.getElementById("ti").style.display = 'block';  
+	  		document.getElementById("ta").style.display = 'block'; 	
+  	  		document.getElementById("re").style.display = 'block'; 
+  	  		document.getElementById("im").style.display = 'block'; 
+  	  		document.getElementById("se").style.display = 'block';  
   			document.getElementById("modifica").style.display = 'block'; 
   			document.getElementById("annulla").style.display = 'none'; 
   			document.getElementById("salva").style.display = 'none';
@@ -41,17 +38,33 @@
 
 <div class="right">
 	<form action="salva_dato_m.jsp" method="get">
-	<input type="hidden" id="id_cat" value="<%= idProdotto%>">
+	<input type="hidden" id="idcat" name="idcat" value="<%=idProdotto %>">
 	<p class="nomeProdotto"><%=nomeProdotto %></p>
 	<p class="categoriaProdotto"><%=categoriaProdotto %></p>
-	<p class="prezzoProdotto" >Tipo : <b id="desc"><%=descrizione %></b> <input style="display:none" type="text" id="descrizione" name="descrizione" value="<%=descrizione %>"></p>
-	<p class="prezzoProdotto" >Targa : <b id="sex"><%=sesso %></b> <input style="display:none" type="text" id="sesso" name="sesso" value="<%=sesso %>"></p>
-	<p class="prezzoProdotto" >Ultima revisione : <b id="date"><%=data %></b> <input style="display:none" type="text" id="data" name="data" value="<%=data %>"></p>
-	<p class="prezzoProdotto" >Data immatricolazione:<b id="kg"><%=quantitaProdotto %></b> <input style="display:none" type="text" id="peso" name="peso" value="<%=quantitaProdotto %>"> Kg </p>
-	<p class="prezzoProdotto" >Capacita' serbatoio: <b id="prod"><%=produzione %></b> <input style="display:none" type="text" id="produzione" name="produzione" value="<%=produzione %>"></p>
+	<p class="prezzoProdotto" >Tipo : <b id="ti"><%=tipo %></b> <input style="display:none" type="text" id="tipo" name="tipo" value="<%=tipo %>"></p>
+	<p class="prezzoProdotto" >Targa : <b id="ta"><%=targa %></b> <input style="display:none" type="text" id="targa" name="targa" value="<%=targa %>"></p>
+	<p class="prezzoProdotto" >Ultima revisione : <b id="re"><%=revisione %></b> <input style="display:none" type="text" id="revisione" name="revisione" value="<%=revisione %>"></p>
+	<p class="prezzoProdotto" >Data immatricolazione:<b id="im"><%=immatricolazione %></b> <input style="display:none" type="text" id="immatricolazione" name="immatricolazione" value="<%=immatricolazione %>"> </p>
+	<p class="prezzoProdotto" >Capacita' serbatoio: <b id="se"><%=serbatoio %></b> <input style="display:none" type="text" id="serbatoio" name="serbatoio" value="<%=serbatoio %>"></p>
 	
 	<input type="submit" id="salva" style="display:none" class='userButtonAggiungiAlCarrello' value="Salva dati">	
 </form>
+	<br/>
+	
+	<form action="error.jsp" method="get">
+	<input type="hidden" id="idcat" name="idcat" value="<%=idProdotto %>">
+	<input type="hidden" id="nome" name="nome" value="<%=nomeProdotto %>">
+	<input type="hidden" id="categoria" name="categoria" value="<%=categoriaProdotto %>">
+	<input type="hidden" id="tipo" name="tipo" value="<%=tipo %>">
+	<input type="hidden" id="targa" name="targa" value="<%= targa%>">
+	<input type="hidden" id="revisione" name="revisione" value="<%= revisione%>">
+	<input type="hidden" id="immatricolazione" name="immatricolazione" value="<%= immatricolazione%>">
+	<input type="hidden" id="serbatoio" name="serbatoio" value="<%= serbatoio%>">
+	
+	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina prodotto">		
+	
+	</form>
+	
 	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
 	<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
 	

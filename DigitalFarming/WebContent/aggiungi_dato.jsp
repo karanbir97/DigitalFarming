@@ -35,21 +35,29 @@
 			        	ConnessioneDB connDB = new ConnessioneDB();
 						if(connDB.getConn() != null) {
 							try {
-								String sql = "INSERT INTO prodotti(nome, descrizione, descrizione_abbreviata, quantita_disponibile, prezzo_base, id_aliquota, id_categoria, id_unita, attivo, sesso, data, produzione, controllo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ;";
+								String sql = "INSERT INTO prodotti(nome, id_categoria, attivo, sesso, data_nascita, produzione, ultimo_controllo, peso, razza, tipo_macchinario, targa, ultima_revisione, immatricolazione, capacita_serbatoio, coltura, varieta, quantita_semina, data_semina, data_raccolto, dimensioni_campo, descrizione) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) ;";
 								PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 								stmt.setString(1, "Mucca1");				
-								stmt.setString(2, razza);				
-								stmt.setString(3, "");								
-								stmt.setInt(4, peso);
-								stmt.setFloat(5, 1);						
-								stmt.setInt(6, 1);				
-								stmt.setInt(7, 1);				
-								stmt.setInt(8, 2);				
-								stmt.setInt(9, 1);
-								stmt.setString(10, sesso);	
-								stmt.setString(11, data);	
-								stmt.setString(12, produzione);	
-								stmt.setString(13, controllo);	
+								stmt.setInt(2, 1);				
+								stmt.setInt(3, 1);								
+								stmt.setString(4, sesso);
+								stmt.setString(5, data);
+								stmt.setString(6, produzione);
+								stmt.setString(7, controllo);
+								stmt.setInt(8, peso);
+								stmt.setString(9, razza);
+								stmt.setString(10, "");	
+								stmt.setString(11, "");	
+								stmt.setString(12, null);	
+								stmt.setString(13, null);	
+								stmt.setInt(14, 0);	
+								stmt.setString(15, "");	
+								stmt.setString(16, "");	
+								stmt.setInt(17, 0);	
+								stmt.setString(18, null);	
+								stmt.setString(19, null);	
+								stmt.setInt(20, 0);	
+								stmt.setString(21, "Mucca1");	
 								if(stmt.executeUpdate() == 1) {
 									contenuto = "Prodotto Inserito con Successo";
 									risultato = 1;					

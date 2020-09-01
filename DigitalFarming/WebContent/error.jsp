@@ -31,7 +31,7 @@
         <%}%>
         <div class="row">
             <div class="col-12-xs text-center">
-            	<%if((idProdotto == 22) || (idProdotto == 23) || (idProdotto == 24)){ %>
+            	<%if((idProdotto == 22)){ %>
             	<form action="aggiungi_dato.jsp" method="get">
             	
 				<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">

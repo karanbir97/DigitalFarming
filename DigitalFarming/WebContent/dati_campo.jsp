@@ -40,11 +40,11 @@
 </script>
 
 <div class="right">
-	<form action="salva_dato.jsp" method="get">
-	<input type="hidden" id="id_cat" value="<%= idProdotto%>">
+	<form action="salva_dato_c.jsp" method="get">
+	<input type="hidden" id="idcat" name="idcat" value="<%=idProdotto%>">
 	<p class="nomeProdotto"><%=nomeProdotto %></p>
 	<p class="categoriaProdotto"><%=categoriaProdotto %></p>
-	<p class="prezzoProdotto" >Coltura : <b id="c"><%=coltura %></b> <input style="display:none" type="text" id="coltura" name="coltura" value="<%=coltura %>"></p>
+	<p class="prezzoProdotto" >Coltura : <b id="c"><%=coltura  %> </b> <input style="display:none" type="text" id="coltura" name="coltura" value="<%=coltura %>"></p>
 	<p class="prezzoProdotto" >Varieta : <b id="v"><%=varieta %></b> <input style="display:none" type="text" id="varieta" name="varieta" value="<%=varieta %>"></p>
 	<p class="prezzoProdotto" >Quantita' : <b id="q"><%=quantita %></b> <input style="display:none" type="text" id="quantita" name="quantita" value="<%=quantita %>"></p>
 	<p class="prezzoProdotto" >Data Semina:<b id="ds"><%=data_semina %></b> <input style="display:none" type="text" id="data_semina" name="data_semina" value="<%=data_semina %>"> </p>
