@@ -1,6 +1,6 @@
-		<div id="loader">
+	<!--  	<div id="loader">
 			<img src="<%=request.getContextPath()%>/images/loader.gif" />
-		</div>
+		</div> -->
 		
 		<div id="modalContatti">			
 			<div id="modalContattiNav">
