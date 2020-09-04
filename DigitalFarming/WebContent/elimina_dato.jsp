@@ -3,7 +3,7 @@
 <html lang = "it">
 	<head>
 		<%@ include file="/partials/head.jsp" %>			
-		<title>Categoria</title>		
+		<title>Elimina</title>		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		

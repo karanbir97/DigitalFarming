@@ -23,7 +23,7 @@
 					</li>
 					
 					<li class="has-child">
-						<a href="<%=request.getContextPath()%>/_adminArea/bilancio.jsp">Bilancio</a>
+						<a href="<%=request.getContextPath()%>/bilancio.jsp">Bilancio</a>
 					</li>
 				</ul>
 				

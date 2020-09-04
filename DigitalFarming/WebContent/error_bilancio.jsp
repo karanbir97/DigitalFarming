@@ -7,6 +7,8 @@
     String descrizione=request.getParameter("descrizione");
     String categoria=request.getParameter("report-type");
     String data=request.getParameter("data");
+    String elimina=request.getParameter("elimina");
+    String id_bilancio=request.getParameter("idb");
     	
 %>
 <div class="modal in" style="display: block;">
@@ -16,8 +18,9 @@
         <h4 class="modal-title">ATTENZIONE</h4>
       </div>
       <div class="modal-body">
+      <%if((elimina == null)){ %>
       	<p>Sei sicuro di voler inserire questa spesa ?</p>
-        <div class="row">
+      	<div class="row">
             <div class="col-12-xs text-center">
             	<form action="aggiungi_spesa.jsp" method="get">
             	
@@ -27,13 +30,22 @@
 				<input type="hidden" id="data" name="data" value="<%=data %>">
                 	<input type="submit" value="Si" class="btn btn-success btn-md">
                 	<input type="button" class="btn btn-danger btn-md" value="No" onClick="history.go(-1);return true;" name="button">
-                
                 </form>
-            	
-            	
-                
             </div>
         </div>
+      	<%}else{ %>
+      	<p>Sei sicuro di voler eliminare questa spesa ?</p>
+        <div class="row">
+            <div class="col-12-xs text-center">
+            	<form action="elimina_spesa.jsp" method="get">
+            	
+				<input type="hidden" id="idb" name="idb" value="<%=id_bilancio %>">
+                	<input type="submit" value="Si" class="btn btn-success btn-md">
+                	<input type="button" class="btn btn-danger btn-md" value="No" onClick="history.go(-1);return true;" name="button">
+                </form> 
+            </div>
+        </div>
+        <%} %>
       </div>
    
     </div><!-- /.modal-content -->

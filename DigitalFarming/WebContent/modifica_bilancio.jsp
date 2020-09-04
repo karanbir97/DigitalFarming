@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Bilancio</title>
+    <title>Modifica</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <meta name="msapplication-TileColor" content="#206bc4"/>
     <meta name="theme-color" content="#206bc4"/>
@@ -28,330 +28,60 @@
       	display: none;
       }
     </style>
+    <%@ include file="/partials/head.jsp" %>
   </head>
   <body class="antialiased">
-  
-<%
-Integer positivo=0;
-Integer negativo=0;
-Integer ca=0;
-Integer spesa=0;
-Integer i=0;
-String m="";
-Integer ricavato=0;
-Integer media=0;
-
-ConnessioneDB conn = new ConnessioneDB();
-
-if(conn.getConn() != null) {
-	try {
-	
-		Statement stmt = conn.getConn().createStatement();
-		String sql = "SELECT * FROM bilancio WHERE attivo = 1;";
-		ResultSet result = stmt.executeQuery(sql);
-		if(!result.wasNull()) {
+      <%@ include file="/partials/header.jsp" %>		
+		<br>
+		
+		<%
+	  		String descrizione="";
+        	Integer c=0;
+        	String categoria="";
+	  		Integer spese=0;
+	  		String msg="";
+	  		String colore="";
+	  		String date="";
+	  		Integer id_bilancio=Integer.parseInt(request.getParameter("idb"));;
+	  		
+			ConnessioneDB connDB = new ConnessioneDB();
 			
-			int rowCount = result.last() ? result.getRow() : 0;
-			if(rowCount > 0) {
-				result.beforeFirst();										
-				while(result.next()) {
-					ca= result.getInt("categoria");
-					spesa=result.getInt("spese");
-					if(ca == 1)
-						negativo=negativo+spesa;
-					else if(ca == 2)
-						positivo=positivo+spesa;
-					i++;
-				}										
-			}
-			else {
-				m = "Prodotto Non Trovato.";
-			}											
-		}															
-		ricavato=positivo-negativo;
-		if(ricavato>0)
-			media=(negativo*100)/positivo;
-		else
-			media=(positivo*100)/negativo;
-		conn.getConn().close();
-	}
-	catch(Exception e) {
-		m = e.getMessage();
-	}	
-}
-else {
-	m = conn.getError();
-}				     %>
-  
-      
-      <div class="content">
-        <div class="container-xl">
-          <!-- Page title -->
-          <div class="page-header">
-            <div class="row align-items-center">
-              <div class="col-auto">
-                <!-- Page pre-title -->
-                
-                <h2 class="page-title">
-                  Gestione bilancio
-                </h2>
-              </div>
-              <!-- Page title actions -->
-              <div class="col-auto ml-auto d-print-none">
-                
-                <a href="#" class="btn btn-primary ml-3 d-none d-sm-inline-block" data-toggle="modal" data-target="#modal-report">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                  Aggiungi nuova spesa
-                </a>
-                <a href="#" class="btn btn-primary ml-3 d-sm-none btn-icon" data-toggle="modal" data-target="#modal-report" aria-label="Create new report">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="row row-deck row-cards">
-            <div class="col-sm-6 col-lg-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center">
-                    <div class="subheader">Ricavato</div>
-                    <div class="ml-auto lh-1">
-                      <div class="dropdown">
-                        <a class="dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Last 7 days
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item active" href="#">Last 7 days</a>
-                          <a class="dropdown-item" href="#">Last 30 days</a>
-                          <a class="dropdown-item" href="#">Last 3 months</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="h1 mb-3"><%=ricavato %></div>
-                  <div class="d-flex mb-2">
-                    <div>Conversion rate</div>
-                    <div class="ml-auto">
-                      <span class="text-green d-inline-flex align-items-center lh-1">
-                        <%=media %>% <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="progress progress-sm">
-                    <div class="progress-bar bg-blue" style="width: 50%" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                      <span class="sr-only">75% Complete</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center">
-                    <div class="subheader">Revenue</div>
-                    <div class="ml-auto lh-1">
-                      <div class="dropdown">
-                        <a class="dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Ultimi 7 days
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item active" href="#">Ultimi 7 days</a>
-                          <a class="dropdown-item" href="#">Ultimi 30 days</a>
-                          <a class="dropdown-item" href="#">Ultimi 3 months</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-0 mr-2">$4,300</div>
-                    <div class="mr-auto">
-                      <span class="text-green d-inline-flex align-items-center lh-1">
-                        8% <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div id="chart-revenue-bg" class="chart-sm"></div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center">
-                    <div class="subheader">New clients</div>
-                    <div class="ml-auto lh-1">
-                      <div class="dropdown">
-                        <a class="dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Last 7 days
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item active" href="#">Last 7 days</a>
-                          <a class="dropdown-item" href="#">Last 30 days</a>
-                          <a class="dropdown-item" href="#">Last 3 months</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-3 mr-2">6,782</div>
-                    <div class="mr-auto">
-                      <span class="text-yellow d-inline-flex align-items-center lh-1">
-                        0% <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div id="chart-new-clients" class="chart-sm"></div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center">
-                    <div class="subheader">Active users</div>
-                    <div class="ml-auto lh-1">
-                      <div class="dropdown">
-                        <a class="dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Last 7 days
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item active" href="#">Last 7 days</a>
-                          <a class="dropdown-item" href="#">Last 30 days</a>
-                          <a class="dropdown-item" href="#">Last 3 months</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-3 mr-2">2,986</div>
-                    <div class="mr-auto">
-                      <span class="text-green d-inline-flex align-items-center lh-1">
-                        4% <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div id="chart-active-users" class="chart-sm"></div>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-            
-            
-            
-           
-            
-            <div class="col-md-6 col-lg-8">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Cronologia dati</h4>
-                </div>
-                <div class="table-responsive">
-                <form action="error_bilancio.jsp" method="get">
-                  <table class="table card-table table-vcenter">
-                    <thead>
-                      <tr>
-                        <th>Descrizione</th>
-                        <th>Categoria</th>
-                        <th>Spesa</th>
-                        <th colspan="2">Data</th>
-                        <th>Modifica</th>
-                      </tr>
-                    </thead>
-                    <%
-				  		String descrizione="";
-                   		Integer c=0;
-                   		String categoria="";
-				  		Integer spese=0;
-				  		String msg="";
-				  		String colore="";
-				  		String date="";
-				  		Integer id_bilancio=0;
-						ConnessioneDB connDB = new ConnessioneDB();
+			if(connDB.getConn() != null) {
+				try {
+				
+					Statement stmt = connDB.getConn().createStatement();
+					String sql = "SELECT * FROM bilancio WHERE idbilancio = "+id_bilancio+";";
+					ResultSet result = stmt.executeQuery(sql);
+					if(!result.wasNull()) {
 						
-						if(connDB.getConn() != null) {
-							try {
-							
-								Statement stmt = connDB.getConn().createStatement();
-								String sql = "SELECT * FROM bilancio WHERE attivo = 1;";
-								ResultSet result = stmt.executeQuery(sql);
-								if(!result.wasNull()) {
-									
-									int rowCount = result.last() ? result.getRow() : 0;
-									if(rowCount > 0) {
-										result.beforeFirst();										
-										while(result.next()) {
-											id_bilancio=result.getInt("idbilancio");
-											descrizione = result.getString("descrizione");
-											c = result.getInt("categoria");
-											spese=result.getInt("spese");
-											date=result.getString("data");
-											if(c == 1){
-												colore="red";
-												categoria="uscita";}
-											else{
-												colore="green";
-												categoria="entrate";}
-										%>	
-											
-											<tr >
-											
-						                      <td>
-						                        <%=descrizione %>
-						                        
-						                      </td>
-						                      <td style="color: <%=colore %>;"><%=categoria %></td>
-						                      <td style="color: <%=colore %>;"><%=spese %></td>
-						                      <td style="color: <%=colore %>;"><%=date %></td>
-						                      <td ></td>
-						                      <td><a href="modifica_bilancio.jsp?idb=<%=id_bilancio %>" class="btn btn-primary ml-3 d-none d-sm-inline-block" >Modifica </a></td>
-						                      <td><a href="error_bilancio.jsp?idb=<%=id_bilancio %>&elimina=elimina" class="btn btn-primary ml-3 d-none d-sm-inline-block">Elimina </a></td>
-						                     
-						                      </tr>
-						                    <% 
-											
-										}										
-									}
-									else {
-										msg = "Prodotto Non Trovato.";
-									}											
-								}															
-								
-								connDB.getConn().close();
-							}
-							catch(Exception e) {
-								msg = e.getMessage();
-							}	
-						}
-						else {
-							msg = connDB.getError();
-						}				        				        
-				 %>
-                  </table>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-     
-    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
-    <form action="error_bilancio.jsp" method="get">
+						int rowCount = result.last() ? result.getRow() : 0;
+						if(rowCount > 0) {
+							result.beforeFirst();										
+							while(result.next()) {
+								descrizione = result.getString("descrizione");
+								c = result.getInt("categoria");
+								spese=result.getInt("spese");
+								date=result.getString("data");
+								if(c == 1){
+									colore="red";
+									categoria="uscita";}
+								else{
+									colore="green";
+									categoria="entrate";}
+							%>	
+		
       <div class="modal-dialog modal-lg" role="document">
+      <form action="salva_bilancio.jsp" method="get">
+      <input type="hidden" id="idb" name="idb" value="<%=id_bilancio %>">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Aggiungi spesa</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-            </button>
+            <h5 class="modal-title">Modifica </h5>
+            
           </div>
           <div class="modal-body">
             <div class="mb-3">
               <label class="form-label">Descrizione</label>
-              <textarea class="form-control" rows="3" id="descrizione" name="descrizione"></textarea>
+              <input type="text" class="form-control pl-0" id="descrizione" name="descrizione" value="<%=descrizione %>">
             </div>
             <label class="form-label" >Categoria</label>
             <div class="form-selectgroup-boxes row mb-3">
@@ -389,7 +119,7 @@ else {
                 <div class="mb-3">
                   <label class="form-label">Somma della spesa</label>
                   <div class="input-group input-group-flat">
-                    <input type="text" class="form-control pl-0" id="spesa" name="spesa" >
+                    <input type="text" class="form-control pl-0" id="spesa" name="spesa" value="<%=spese %>">
                   </div>
                 </div>
               </div>
@@ -409,23 +139,43 @@ else {
               <div class="col-lg-6">
                 <div class="mb-3">
                   <label class="form-label">Data</label>
-                  <input type="date" class="form-control" id="data" name="data">
+                  <input type="date" class="form-control" id="data" name="data" value="<%=date %>">
                 </div>
               </div>
               
             </div>
           </div>
           <div class="modal-footer">
-            <a href="#" class="btn btn-link link-secondary" data-dismiss="modal">
-              Annulla
-            </a>
-            <input type="submit" id="inserisci" name="inserisci"  class="btn btn-primary ml-auto" value="Inserisci nuova spesa">		
+            <input type="button" class="btn btn-danger btn-md" value="Annula" onClick="history.go(-1);return true;" name="button">
+               
+            <input type="submit" id="modifica" name="modifica"  class="btn btn-primary ml-auto" value="Modifica spesa">		
             
           </div>
         </div>
+        </form>
       </div>
-      </form>
-    </div>
+      
+      <% 
+											
+										}										
+									}
+									else {
+										msg = "Prodotto Non Trovato.";
+									}											
+								}															
+								
+								connDB.getConn().close();
+							}
+							catch(Exception e) {
+								msg = e.getMessage();
+							}	
+						}
+						else {
+							msg = connDB.getError();
+						}				        				        
+				 %>
+      
+      
     <!-- Libs JS -->
     <script src="./dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./dist/libs/jquery/dist/jquery.slim.min.js"></script>
@@ -879,5 +629,8 @@ else {
     <script>
       document.body.style.display = "block"
     </script>
+    
+    
+    <%@ include file="/partials/footer.jsp" %>	
   </body>
 </html>

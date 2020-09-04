@@ -27,7 +27,7 @@
       	<%if(idProdotto == 22){ %>
       	<p>Sei sicuro di voler inserire il seguente animale ?</p>
       	<%}else { %>
-        <p>Sei sicuro di voler eliminare definitivamente il prodotto selezionato ?</p>
+        <p>Sei sicuro di voler eliminare definitivamente l'elemento selezionato ?</p>
         <%}%>
         <div class="row">
             <div class="col-12-xs text-center">
