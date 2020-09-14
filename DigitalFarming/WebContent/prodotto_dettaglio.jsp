@@ -147,7 +147,7 @@
 				<div class="dettaglioProdotto">	
 					<div class="left">
 						<%=immaginePrincipale %>
-						<%=immagini %>							
+						<%=immagini %>								
 					</div>
 					<%if(cat == 1){ %>
 					<%@ include file="/dati_bestiame.jsp" %>
@@ -160,7 +160,7 @@
 					<%} else if(cat == 5){ %>
 					<%@ include file="/aggiungi_macchinari.jsp" %>
 					<%} else if(cat == 6){ %>
-					<%@ include file="/aggiungi_bestiame.jsp" %>
+					<%@ include file="/aggiungi_campo.jsp" %>
 					<%} %>
 				</div>        			        
 			</div>

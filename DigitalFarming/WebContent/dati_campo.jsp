@@ -65,11 +65,11 @@
 	<input type="hidden" id="data_raccolta" name="data_raccolta" value="<%= data_raccolta%>">
 	<input type="hidden" id="dimensione_campo" name="dimensione_campo" value="<%= dimensione_campo%>">
 	
-	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina prodotto">		
+	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina campo">		
 	
 	</form>
 	
-	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
+	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica dati campo</button>
 	<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
 	
 	

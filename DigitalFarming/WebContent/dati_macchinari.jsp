@@ -61,11 +61,11 @@
 	<input type="hidden" id="immatricolazione" name="immatricolazione" value="<%= immatricolazione%>">
 	<input type="hidden" id="serbatoio" name="serbatoio" value="<%= serbatoio%>">
 	
-	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina prodotto">		
+	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina macchinario">		
 	
 	</form>
 	
-	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
+	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica macchinari</button>
 	<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
 	
 	

@@ -64,11 +64,11 @@
 	<input type="hidden" id="produzione" name="produzione" value="<%= produzione%>">
 	<input type="hidden" id="controllo" name="controllo" value="<%= controllo%>">
 	
-	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina prodotto">		
+	<input type="submit" id="elimina" name="elimina" style="display:none" class='userButtonAggiungiAlCarrello' value="Elimina animale">		
 	
 	</form>
 	
-	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica prodotto</button>
+	<button id="modifica" class='userButtonAggiungiAlCarrello' onclick="Modifica()">Modifica dati animale</button>
 	<p><button id="annulla" style="display:none" class='userButtonAggiungiAlCarrello' onclick="Annulla()">Annulla modifica</button>	</p>
 	
 	

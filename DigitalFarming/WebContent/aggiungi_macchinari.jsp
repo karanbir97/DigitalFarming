@@ -10,15 +10,12 @@
 	
 	<br/>
 	
-	<input type="hidden" id="idcat" name="idcat" value="<%= idProdotto%>">
-	<input type="hidden" id="nome" name="nome" value="<%=nomeProdotto %>">
-	<input type="hidden" id="categoria" name="categoria" value="<%=categoriaProdotto %>">
-	<input type="hidden" id="descrizione" name="descrizione" value="<%=descrizione %>">
-	<input type="hidden" id="sesso" name="sesso" value="<%= sesso%>">
-	<input type="hidden" id="data" name="data" value="<%= data%>">
-	<input type="hidden" id="peso" name="peso" value="<%= quantitaProdotto%>">
-	<input type="hidden" id="produzione" name="produzione" value="<%= produzione%>">
-	<input type="hidden" id="controllo" name="controllo" value="<%= controllo%>">
+	<input type="hidden" id="tipo" name="tipo" value="<%=tipo %>">
+	<input type="hidden" id="targa" name="targa" value="<%=targa %>">
+	<input type="hidden" id="revisione" name="revisione" value="<%=revisione %>">
+	<input type="hidden" id="immatricolazione" name="immatricolazione" value="<%=immatricolazione %>">
+	<input type="hidden" id="capacita" name="capacita" value="<%=serbatoio %>">
+	<input type="hidden" id="idcat" name="idcat" value="<%=idProdotto %>">
 	
 	<input type="submit" id="inserisci" name="inserisci"  class='userButtonAggiungiAlCarrello' value="Inserisci macchinari">		
 	
